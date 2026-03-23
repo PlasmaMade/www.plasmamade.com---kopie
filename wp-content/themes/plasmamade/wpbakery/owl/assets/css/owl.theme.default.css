@@ -1,0 +1,190 @@
+/**
+ * Owl Carousel v2.3.4
+ * Copyright 2013-2018 David Deutsch
+ * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
+ */
+/*
+ * 	Default theme - Owl Carousel CSS File
+ */
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 5px; }
+
+.owl-theme .owl-dots {
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.owl-theme .owl-dots .owl-dot {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+.owl-theme .owl-dots .owl-dot span {
+  width: 10px;
+  height: 10px;
+  margin: 5px 7px;
+  background: #D6D6D6;
+  display: block;
+  -webkit-backface-visibility: visible;
+  transition: opacity 200ms ease;
+  border-radius: 30px;
+  transition: all .3s ease-in-out !important;
+}
+.owl-theme .owl-dots .owl-dot.active span {
+  background: #000;
+  width: 30px;
+	height: 10px;
+	border-radius: 10px;
+}
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: #000;
+}
+
+.owl-carousel .owl-item img {
+  display: block;
+  width:auto;
+}
+
+
+/* Nav */
+
+.owl-nav {
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  /* top: -25px; */
+}
+.owl-nav {
+  position: absolute;
+  /* height: 50px; */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/* Nav bottom */
+.owl-nav-bottom .owl-nav {
+  position: absolute;
+  height: 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  top:auto;
+  bottom: -20px;
+}
+
+.owl-nav .owl-next {
+  right: -10px !important;
+}
+
+.owl-nav .owl-prev {
+  left: -10px !important;
+}
+
+/* *** */
+
+div.owl-nav .owl-prev:hover::before,
+div.owl-nav .owl-next:hover::before {
+  -webkit-transform: scale(.9);
+  -ms-transform: scale(.9);
+  transform: scale(.9);
+}
+div.owl-nav .owl-prev::before,
+div.owl-nav .owl-next::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  height: -webkit-calc(100% + 20px);
+  height: calc(100% + 20px);
+  width: -webkit-calc(100% + 20px);
+  width: calc(100% + 20px);
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  z-index: 1;
+  -webkit-transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.25s;
+  -o-transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.25s;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.25s;
+}
+
+.owl-prev {
+  left: -25px;
+}
+@media screen and (min-width: 1082px) {
+  .owl-nav .owl-prev {
+    left: -50px;
+  }
+}
+.owl-nav .owl-prev, .owl-nav .owl-next {
+  position: relative;
+}
+
+.owl-next {
+  right: -25px;
+}
+@media screen and (min-width: 1082px) {
+  .owl-nav .owl-next {
+    right: -50px;
+  }
+}
+.owl-nav .owl-prev, .owl-nav .owl-next {
+  position: relative;
+  display: flex;
+}
+
+.owl-nav .owl-prev .ion,
+.owl-nav .owl-next .ion {
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  border: none;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 22px;
+  position: relative;
+  z-index: 1;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  cursor: pointer;
+  padding: 13px;
+}
+
+
