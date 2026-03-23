@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISO-omgeving en cleanroom-principes - PlasmaMade</title>
+<meta name="description" content="Uitgebreide informatie over ISO-omgevingen, cleanroom-principes en hoe AirClean UltraFine past binnen projecten waar gecontroleerde luchtkwaliteit belangrijk is.">
+<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="PlasmaMade" />
+<link rel="stylesheet" href="wp-content/themes/plasmamade/bs/css/main.min.css" media="all" />
+<link rel="stylesheet" href="wp-content/themes/plasmamade/style.css?v=20260323a" media="all" />
+<style>
+  body {
+    background:
+      radial-gradient(circle at top right, rgba(132,215,145,.16) 0%, rgba(132,215,145,0) 26%),
+      linear-gradient(180deg, #f7faf7 0%, #ffffff 42%);
+    color: #36535d;
+  }
+  .detail-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    padding-top: 1rem;
+  }
+  .detail-nav {
+    padding: .9rem 1.25rem;
+    border: 1px solid rgba(3,40,61,.08);
+    border-radius: 1.2rem;
+    box-shadow: 0 .8rem 1.5rem rgba(3,40,61,.05);
+  }
+  .detail-nav .nav-link {
+    color: #03283d;
+    font-weight: 600;
+  }
+  .detail-main {
+    padding: clamp(2rem, 5vw, 4rem) 0 4rem;
+  }
+  .detail-section + .detail-section {
+    margin-top: 1.35rem;
+  }
+  .detail-shell,
+  .detail-topbar,
+  .detail-card,
+  .detail-band,
+  .detail-table-shell,
+  .detail-source-list,
+  .detail-closing {
+    border: 1px solid rgba(3,40,61,.08);
+    border-radius: 1.5rem;
+    background: #fff;
+    box-shadow: 0 1rem 2rem rgba(3,40,61,.05);
+  }
+  .detail-topbar {
+    padding: .95rem 1.05rem;
+  }
+  .detail-jump-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .65rem;
+  }
+  .detail-jump-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: .6rem .95rem;
+    border-radius: 999px;
+    background: #f4f8f6;
+    color: #03283d;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .detail-jump-nav a:hover,
+  .detail-jump-nav a:focus {
+    background: #e7f3eb;
+  }
+  .detail-hero {
+    overflow: hidden;
+  }
+  .detail-hero-copy {
+    padding: clamp(1.45rem, 3vw, 2.3rem);
+  }
+  .detail-kicker {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: .9rem;
+    padding: .45rem .8rem;
+    border-radius: 999px;
+    background: rgba(132,215,145,.18);
+    color: #0c5d44;
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .detail-hero-copy h1,
+  .detail-card h2,
+  .detail-band h2,
+  .detail-table-shell h2,
+  .detail-source-list h2,
+  .detail-closing h2 {
+    color: #03283d;
+  }
+  .detail-hero-copy h1 {
+    margin-bottom: .9rem;
+  }
+  .detail-hero-copy p,
+  .detail-card p,
+  .detail-band p,
+  .detail-closing p,
+  .detail-source-list li,
+  .detail-table-note {
+    line-height: 1.8;
+  }
+  .detail-hero-copy p {
+    margin-bottom: 0;
+    font-size: 1.03rem;
+  }
+  .detail-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .85rem;
+    margin-top: 1.3rem;
+  }
+  .detail-gallery {
+    display: grid;
+    gap: .75rem;
+    grid-template-columns: 1.25fr .75fr;
+    padding: .75rem;
+    background: linear-gradient(180deg, #f3f8f4 0%, #edf5f1 100%);
+  }
+  .detail-gallery figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 1.2rem;
+    min-height: 220px;
+    background: #fff;
+  }
+  .detail-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .detail-gallery-stack {
+    display: grid;
+    gap: .75rem;
+    grid-template-rows: 1fr 1fr;
+  }
+  .detail-card,
+  .detail-closing {
+    padding: clamp(1.3rem, 2vw, 1.8rem);
+  }
+  .detail-card h2,
+  .detail-closing h2 {
+    margin-bottom: .8rem;
+    font-size: 1.32rem;
+  }
+  .detail-points {
+    display: grid;
+    gap: .85rem;
+    margin-top: 1rem;
+  }
+  .detail-point {
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+    background: #f8fbfc;
+    border: 1px solid rgba(3,40,61,.08);
+  }
+  .detail-point strong {
+    display: block;
+    margin-bottom: .35rem;
+    color: #03283d;
+  }
+  .detail-band {
+    padding: 1.35rem 1.45rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f3f8f4 100%);
+  }
+  .detail-band h2 {
+    margin-bottom: .7rem;
+    font-size: 1.25rem;
+  }
+  .detail-table-shell {
+    overflow: hidden;
+  }
+  .detail-table-head {
+    padding: 1.35rem 1.45rem 0;
+  }
+  .detail-table-head h2 {
+    margin-bottom: .45rem;
+    font-size: 1.32rem;
+  }
+  .detail-table-wrap {
+    overflow-x: auto;
+    padding: 1rem 1.1rem 1.1rem;
+  }
+  .detail-table {
+    width: 100%;
+    min-width: 980px;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: .95rem;
+  }
+  .detail-table th,
+  .detail-table td {
+    padding: .85rem .9rem;
+    border-bottom: 1px solid rgba(3,40,61,.08);
+    vertical-align: top;
+  }
+  .detail-table thead th {
+    background: #f3f8f4;
+    color: #03283d;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .detail-table tbody tr:nth-child(even) td {
+    background: #fbfdfc;
+  }
+  .detail-table td:first-child,
+  .detail-table th:first-child {
+    color: #03283d;
+    font-weight: 700;
+  }
+  .detail-table tr.is-highlight td {
+    background: #e9f7ec !important;
+    color: #154d2d;
+    font-weight: 600;
+  }
+  .detail-table tr.is-highlight td:first-child {
+    color: #0c5d44;
+  }
+  .detail-table-note {
+    margin: 0;
+    padding: 0 1.45rem 1.25rem;
+    color: #56717b;
+  }
+  .detail-source-list {
+    padding: 1.15rem 1.2rem;
+  }
+  .detail-source-list h2 {
+    margin-bottom: .8rem;
+    font-size: 1.2rem;
+  }
+  .detail-source-list ul {
+    margin: 0;
+    padding-left: 1.1rem;
+  }
+  .detail-source-list li + li {
+    margin-top: .55rem;
+  }
+  @media (max-width: 991px) {
+    .detail-gallery {
+      grid-template-columns: 1fr;
+    }
+    .detail-gallery-stack {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+  }
+  @media (max-width: 767px) {
+    .detail-header {
+      position: static;
+      padding-top: .75rem;
+    }
+    .detail-nav {
+      padding: .85rem 1rem;
+    }
+    .detail-nav .navbar-brand img {
+      width: 220px;
+      height: auto;
+    }
+    .detail-gallery-stack {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body class="wp-theme-plasmamade theme-plasmamade">
+
+<header class="container detail-header">
+  <nav class="navbar navbar-light bg-white detail-nav">
+    <a class="me-auto logo navbar-brand" href="index.html" title="PlasmaMade" rel="home">
+      <img src="wp-content/uploads/2025/02/Logo-PlasmaMade.svg" width="300" height="64" alt="PlasmaMade">
+    </a>
+    <div class="d-flex flex-wrap align-items-center gap-2 justify-content-end">
+      <a href="index.html" class="nav-link px-2">Home</a>
+      <a href="airclean-ultrafine/index.html" class="nav-link px-2">AirClean UltraFine</a>
+      <a href="contact/index.html" class="btn btn-primary">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="detail-main" id="main-content">
+  <section class="container detail-section">
+    <div class="detail-topbar">
+      <nav class="detail-jump-nav" aria-label="Snel naar onderdeel">
+        <a href="#iso-basis">Basis</a>
+        <a href="#iso-reeks">ISO-reeks</a>
+        <a href="#iso-tabel">ISO-klassen</a>
+        <a href="#iso-ultrafine">UltraFine</a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="container detail-section">
+    <div class="detail-shell detail-hero">
+      <div class="detail-hero-copy">
+        <p class="detail-kicker">Validatie en techniek</p>
+        <h1>ISO-omgeving en cleanroom-principes helder en praktisch uitgelegd</h1>
+        <p>De verwijzing naar ISO 6/7-principes op de UltraFine-pagina gaat over een professionele manier van kijken naar luchtkwaliteit: luchtkwaliteit beheersen, meten en technisch onderbouwen. Het gaat dus niet alleen om comfort, maar om een omgeving waarin deeltjesbelasting, stabiliteit en prestaties serieus worden benaderd.</p>
+        <div class="detail-actions">
+          <a href="airclean-ultrafine/index.html#airclean-ultrafine-validatie" class="btn btn-outline-primary">Terug naar validatie</a>
+          <a href="contact/index.html" class="btn btn-primary">Project bespreken</a>
+        </div>
+      </div>
+      <div class="detail-gallery">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1748000970909-845f4aa144d2?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2xlYW5yb29tfGVufDB8fDB8fHww&amp;ixlib=rb-4.1.0&amp;q=60&amp;w=1600" alt="Heldere cleanroomomgeving met gecontroleerde werkvloer" loading="lazy">
+        </figure>
+        <div class="detail-gallery-stack">
+          <figure>
+            <img src="wp-content/uploads/airclean-ultrafine/clean.png" alt="Technische visual van ISO 6 en 7 cleanroom-principes" loading="lazy">
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1748349221526-33b51820b21e?auto=format&amp;fit=crop&amp;fm=jpg&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNsZWFucm9vbXxlbnwwfHwwfHx8MA%3D%3D&amp;ixlib=rb-4.1.0&amp;q=60&amp;w=1600" alt="Medewerkers in beschermende kleding in een gecontroleerde omgeving" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container detail-section" id="iso-basis">
+    <div class="detail-card">
+      <h2>Wat betekent een ISO-omgeving in de praktijk?</h2>
+      <p>Een ISO-omgeving draait om gecontroleerde luchtzuiverheid. Daarbij wordt gekeken naar het aantal deeltjes in de lucht, naar de stabiliteit van de ruimte en naar de vraag of die prestaties ook meetbaar en herhaalbaar zijn. Daarom hoort een ISO-klasse altijd bij een ruimte of zone als geheel en niet bij een los toestel.</p>
+      <div class="detail-points">
+        <div class="detail-point">
+          <strong>De ruimte staat centraal</strong>
+          <p>De classificatie hangt samen met luchtstromen, gebruik, inpassing, onderhoud en de manier waarop de ruimte wordt belast.</p>
+        </div>
+        <div class="detail-point">
+          <strong>Deeltjes in de lucht zijn leidend</strong>
+          <p>De norm kijkt naar concentraties van luchtgedragen deeltjes in verschillende groottes.</p>
+        </div>
+        <div class="detail-point">
+          <strong>Meetbaarheid geeft geloofwaardigheid</strong>
+          <p>Alleen een meetbaar en herhaalbaar resultaat maakt een gecontroleerde omgeving inhoudelijk sterk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container detail-section" id="iso-reeks">
+    <div class="detail-band">
+      <h2>Hoe de ISO 14644-reeks samenhangt</h2>
+      <p>De openbare samenvattingen van ISO 14644 laten een duidelijke opbouw zien. ISO 14644-1 gaat over classificatie van luchtzuiverheid op basis van deeltjesconcentratie. ISO 14644-2 gaat over monitoring om prestaties blijvend te bewaken. ISO 14644-3 beschrijft testmethoden voor verschillende gebruikstoestanden van een ruimte. Samen vormen die drie onderdelen het kader waarmee een gecontroleerde omgeving inhoudelijk wordt beoordeeld en bewaakt.</p>
+    </div>
+  </section>
+
+  <section class="container detail-section" id="iso-tabel">
+    <div class="detail-table-shell">
+      <div class="detail-table-head">
+        <p class="detail-kicker mb-2">Overzicht</p>
+        <h2>Tabel met ISO-klassen</h2>
+        <p class="mb-0">Onderstaand overzicht laat per ISO-klasse de maximale aantallen deeltjes per m&sup3; lucht zien. Voor snelle herkenning is de voor UltraFine meest relevante referentieklasse groen gemarkeerd.</p>
+      </div>
+      <div class="detail-table-wrap">
+        <table class="detail-table" aria-label="Tabel met ISO-klassen en maximale deeltjesconcentraties">
+          <thead>
+            <tr>
+              <th>ISO-klasse</th>
+              <th>&ge; 0,1 &micro;m</th>
+              <th>&ge; 0,2 &micro;m</th>
+              <th>&ge; 0,3 &micro;m</th>
+              <th>&ge; 0,5 &micro;m</th>
+              <th>&ge; 1,0 &micro;m</th>
+              <th>&ge; 5,0 &micro;m</th>
+              <th>Duiding</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ISO 1</td>
+              <td>10</td>
+              <td>2</td>
+              <td>1</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>Extreem specialistisch.</td>
+            </tr>
+            <tr>
+              <td>ISO 2</td>
+              <td>100</td>
+              <td>24</td>
+              <td>10</td>
+              <td>4</td>
+              <td>1</td>
+              <td>-</td>
+              <td>Zeer hoog gecontroleerde omgevingen.</td>
+            </tr>
+            <tr>
+              <td>ISO 3</td>
+              <td>1.000</td>
+              <td>237</td>
+              <td>102</td>
+              <td>35</td>
+              <td>8</td>
+              <td>-</td>
+              <td>Zeer lage deeltjesacceptatie.</td>
+            </tr>
+            <tr>
+              <td>ISO 4</td>
+              <td>10.000</td>
+              <td>2.365</td>
+              <td>1.018</td>
+              <td>352</td>
+              <td>83</td>
+              <td>3</td>
+              <td>Zeer schone proceszones.</td>
+            </tr>
+            <tr>
+              <td>ISO 5</td>
+              <td>100.000</td>
+              <td>23.651</td>
+              <td>10.176</td>
+              <td>3.517</td>
+              <td>832</td>
+              <td>29</td>
+              <td>Klassieke cleanroomtoepassingen.</td>
+            </tr>
+            <tr>
+              <td>ISO 6</td>
+              <td>1.000.000</td>
+              <td>236.514</td>
+              <td>101.763</td>
+              <td>35.168</td>
+              <td>8.318</td>
+              <td>293</td>
+              <td>Schone productie en afgeschermde omgevingen.</td>
+            </tr>
+            <tr class="is-highlight">
+              <td>ISO 7</td>
+              <td>10.000.000</td>
+              <td>2.365.144</td>
+              <td>1.017.625</td>
+              <td>351.676</td>
+              <td>83.176</td>
+              <td>2.925</td>
+              <td>Relevante referentieklasse voor UltraFine in deze uitleg.</td>
+            </tr>
+            <tr>
+              <td>ISO 8</td>
+              <td>100.000.000</td>
+              <td>23.651.441</td>
+              <td>10.176.251</td>
+              <td>3.516.757</td>
+              <td>831.764</td>
+              <td>29.251</td>
+              <td>Milder gecontroleerde omgevingen.</td>
+            </tr>
+            <tr>
+              <td>ISO 9</td>
+              <td>1.000.000.000</td>
+              <td>236.514.412</td>
+              <td>101.762.505</td>
+              <td>35.167.572</td>
+              <td>8.317.638</td>
+              <td>292.511</td>
+              <td>Benadert gewone ruimtelucht.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="detail-table-note">Dit is een vereenvoudigd en afgerond overzicht voor snelle orientatie. Voor formele classificatie, meetstrategie en toetsing blijft de norm zelf leidend.</p>
+    </div>
+  </section>
+
+  <section class="container detail-section" id="iso-ultrafine">
+    <div class="detail-card">
+      <h2>Waarom wordt ISO 6/7 bij UltraFine genoemd?</h2>
+      <p>De UltraFine-pagina gebruikt de verwijzing naar ISO 6/7-principes om duidelijk te maken dat de oplossing inhoudelijk past bij projecten waar luchtkwaliteit serieus en technisch wordt benaderd. Het gaat daarbij vooral om de combinatie van deeltjesreductie, een rustige luchtstroom, lage luchtweerstand en de behoefte aan onderbouwing in een professionele omgeving.</p>
+      <div class="detail-points">
+        <div class="detail-point">
+          <strong>Professionele denkrichting</strong>
+          <p>UltraFine sluit aan op ruimtes waar luchtkwaliteit meer moet zijn dan een algemeen comfortargument.</p>
+        </div>
+        <div class="detail-point">
+          <strong>Technische positionering</strong>
+          <p>De koppeling met cleanroom-principes helpt om de technologie sterker uit te leggen aan adviseurs, installateurs en eindklanten.</p>
+        </div>
+        <div class="detail-point">
+          <strong>Onderbouwing in projecten</strong>
+          <p>Validatie, meetrapporten en fijnstofonderzoek maken het verhaal sterker in projecten waar prestaties aantoonbaar moeten zijn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container detail-section">
+    <div class="detail-closing">
+      <h2>Samengevat</h2>
+      <p>Deze pagina is bedoeld om de verwijzing naar ISO- en cleanroom-principes op de UltraFine-pagina beter te duiden. De kern is dat UltraFine relevant wordt in projecten waar luchtkwaliteit meetbaar, overtuigend en professioneel moet worden uitgelegd. Dat maakt de koppeling inhoudelijk sterk, zolang hij gelezen wordt als technische context voor de ruimte en niet als losse certificeringsclaim.</p>
+      <div class="detail-actions">
+        <a href="airclean-ultrafine/index.html#airclean-ultrafine-validatie" class="btn btn-outline-primary">Terug naar validatie</a>
+        <a href="contact/index.html" class="btn btn-primary">Project bespreken</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container detail-section">
+    <div class="detail-source-list">
+      <h2>Bronnen</h2>
+      <ul>
+        <li><a href="https://www.iso.org/standard/53394.html" target="_blank" rel="noopener noreferrer">ISO 14644-1:2015 - officiele ISO-pagina</a></li>
+        <li><a href="https://www.iso.org/standard/53393.html" target="_blank" rel="noopener noreferrer">ISO 14644-2:2015 - officiele ISO-pagina</a></li>
+        <li><a href="https://www.iso.org/standard/60598.html" target="_blank" rel="noopener noreferrer">ISO 14644-3:2019 - officiele ISO-pagina</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
+
+

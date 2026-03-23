@@ -1,0 +1,9 @@
+[ma 23-03-2026 15:45:44,68] starting server
+Exception calling "Start" with "0" argument(s): "Er is geprobeerd toegang te verkrijgen tot een socket op een volgens d
+e toegangsmachtigingen niet toegestane manier"
+At C:\My Web Sites\plasma web\www.plasmamade.com - kopie\serve-local.ps1:133 char:5
++     $tcpListener.Start()
++     ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : SocketException
+ 

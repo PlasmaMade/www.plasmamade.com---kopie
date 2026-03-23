@@ -628,6 +628,17 @@ input[disabled='disabled'][type='submit'] {
 	background-color: #eee;
 }
 
+a[href$="airclean-ultrafine/index.html"],
+a[href*="airclean-ultrafine/index.html"],
+a[href$="airclean%20ultrafine/index.html"],
+a[href*="airclean%20ultrafine/index.html"],
+a[href$="airclean ultrafine/index.html"],
+a[href*="airclean ultrafine/index.html"] {
+	position: relative;
+	z-index: 2147483646;
+	pointer-events: auto !important;
+}
+
 
 /* Navbar Mobile */
 ul.navbar-mobile {
