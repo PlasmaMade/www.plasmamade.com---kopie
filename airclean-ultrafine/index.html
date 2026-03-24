@@ -1441,6 +1441,12 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       }
     }
     @media (max-width: 767px) {
+      .ultrafine-motion {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+      }
       #airclean-ultrafine-specificaties .row {
         --bs-gutter-x: 0;
         display: block;
@@ -1460,6 +1466,19 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         max-width: 100%;
         margin-right: 0;
         margin-left: 0;
+      }
+      #airclean-ultrafine-specificaties .checked-list-success ul {
+        margin-left: 0;
+        padding-left: 0;
+        list-style: none;
+      }
+      #airclean-ultrafine-specificaties .ultrafine-media {
+        overflow: hidden;
+        border-radius: 1rem;
+      }
+      #airclean-ultrafine-specificaties .ultrafine-media img {
+        display: block;
+        width: 100%;
       }
       .ultrafine-shop-shell {
         padding: 1.15rem;
@@ -1534,20 +1553,24 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       .ultrafine-app-carousel {
         padding-bottom: 2.15rem;
       }
+      .ultrafine-app-carousel .carousel-inner {
+        overflow: visible;
+      }
       .ultrafine-app-carousel .carousel-item {
-        height: 420px;
+        height: auto;
+        min-height: 0;
       }
       .ultrafine-app-slide {
         grid-template-columns: 1fr;
-        grid-template-rows: 235px minmax(0, 1fr);
-        height: 100%;
+        grid-template-rows: 235px auto;
+        height: auto;
       }
       .ultrafine-app-slide img {
         min-height: 235px;
         height: 235px;
       }
       .ultrafine-app-slide-content {
-        height: 100%;
+        height: auto;
         align-items: flex-start;
         min-width: 0;
         padding: 1.1rem 1.1rem 1.2rem;
@@ -1557,9 +1580,13 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       .ultrafine-app-slide-copy {
         width: 100%;
         max-width: none;
-        min-height: 100%;
+        min-height: 0;
         min-width: 0;
         padding: 1.1rem 1.1rem 1.15rem;
+      }
+      .ultrafine-app-slide-copy p {
+        font-size: .98rem;
+        line-height: 1.58;
       }
       .ultrafine-app-control.carousel-control-prev {
         left: .65rem;
@@ -1644,9 +1671,12 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         padding: 1.75rem 0 1.25rem;
       }
       .ultrafine-brochure-shape {
-        --shape-height: 250px;
-        top: 29.5rem;
-        width: min(56vw, 220px);
+        --shape-height: 210px;
+        top: auto;
+        right: 0;
+        bottom: 1.35rem;
+        width: min(48vw, 180px);
+        opacity: .82;
       }
       .ultrafine-brochure-grid {
         display: block;
@@ -1690,15 +1720,20 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       }
       .ultrafine-brochure-visual {
         position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
         width: 100%;
-        min-height: 440px;
+        min-height: 380px;
         margin-top: 1.5rem;
       }
       .ultrafine-brochure-unit {
-        top: .75rem;
-        right: -.5rem;
+        top: auto;
+        right: 0;
+        bottom: 0;
         width: auto;
-        height: min(96vw, 405px);
+        max-width: min(82vw, 300px);
+        height: min(88vw, 360px);
       }
     }
   </style>
@@ -2554,7 +2589,7 @@ var gdpr_consent__cookies = "strict"
 				return;
 			}
 
-			if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+			if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.matchMedia('(max-width: 767px)').matches || !('IntersectionObserver' in window)) {
 				prepared.forEach(function (node) {
 					node.classList.add('is-visible');
 				});
