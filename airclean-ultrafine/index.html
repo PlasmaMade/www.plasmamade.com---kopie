@@ -867,6 +867,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       grid-template-columns: minmax(0, 1.25fr) minmax(280px, .78fr);
       height: 100%;
       overflow: hidden;
+      min-width: 0;
       background: linear-gradient(145deg, #f9fbf8 0%, #ffffff 100%);
     }
     .ultrafine-app-slide img {
@@ -881,6 +882,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       display: flex;
       align-items: center;
       height: 100%;
+      min-width: 0;
       padding: clamp(1.3rem, 2.5vw, 2.1rem);
       background:
         linear-gradient(180deg, #f9fbf8 0%, #ffffff 100%);
@@ -890,6 +892,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       width: 100%;
       max-width: 24rem;
       min-height: 100%;
+      min-width: 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -904,12 +907,14 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       font-size: clamp(1.4rem, 1.9vw, 1.8rem);
       line-height: 1.16;
       color: #03283d !important;
+      overflow-wrap: anywhere;
     }
     .ultrafine-app-slide-copy p {
       margin-bottom: 0;
       font-size: 1.02rem;
       line-height: 1.62;
       color: #294852 !important;
+      overflow-wrap: anywhere;
     }
     .ultrafine-app-slide-label {
       display: inline-flex;
@@ -1201,6 +1206,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       color: #03283d;
       font-size: clamp(1.55rem, 2vw, 1.95rem);
       line-height: 1.08;
+      overflow-wrap: anywhere;
     }
     .ultrafine-product-title span {
       display: block;
@@ -1209,6 +1215,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       font-size: .94rem;
       font-weight: 500;
       line-height: 1.45;
+      overflow-wrap: anywhere;
     }
     .ultrafine-product-summary {
       margin: .85rem 0 0;
@@ -1434,6 +1441,26 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       }
     }
     @media (max-width: 767px) {
+      #airclean-ultrafine-specificaties .row {
+        --bs-gutter-x: 0;
+        display: block;
+        margin-right: 0;
+        margin-left: 0;
+      }
+      #airclean-ultrafine-specificaties .row > [class*="col-"] {
+        display: block;
+        width: 100%;
+        max-width: none;
+        padding-right: 0;
+        padding-left: 0;
+      }
+      #airclean-ultrafine-specificaties .checked-list-success,
+      #airclean-ultrafine-specificaties .ultrafine-media {
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+      }
       .ultrafine-shop-shell {
         padding: 1.15rem;
         border-radius: 1.3rem;
@@ -1445,6 +1472,15 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       .ultrafine-product-main {
         min-height: 260px;
         padding: .9rem;
+      }
+      .ultrafine-product-main::after {
+        inset: auto -4% -16% auto;
+        width: min(140px, 30%);
+      }
+      .ultrafine-product-main img,
+      .ultrafine-product-card--feature .ultrafine-product-main img {
+        max-width: min(100%, 320px);
+        max-height: 300px;
       }
       .ultrafine-product-top {
         margin-bottom: 1rem;
@@ -1471,6 +1507,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       }
       .ultrafine-product-actions .btn {
         width: 100%;
+      }
+      .ultrafine-product-actions .btn-primary,
+      .ultrafine-product-actions .btn-outline-primary {
+        min-width: 0;
       }
       .ultrafine-product-spec-detail {
         max-height: none;
@@ -1509,6 +1549,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       .ultrafine-app-slide-content {
         height: 100%;
         align-items: flex-start;
+        min-width: 0;
         padding: 1.1rem 1.1rem 1.2rem;
         border-left: 0;
         border-top: 1px solid rgba(3,40,61,.08);
@@ -1517,6 +1558,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         width: 100%;
         max-width: none;
         min-height: 100%;
+        min-width: 0;
         padding: 1.1rem 1.1rem 1.15rem;
       }
       .ultrafine-app-control.carousel-control-prev {
@@ -1676,13 +1718,13 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
                 <div class="ultrafine-brochure-meta">
                   <div class="ultrafine-brochure-text">
-                    <p class="ultrafine-brochure-intro">AirClean UltraFine is een luchtreiniger voor <span class="ultrafine-brochure-accent">professionele ruimtes</span> waar luchtkwaliteit, comfort en energieverbruik in balans moeten zijn.</p>
+                    <p class="ultrafine-brochure-intro">Schoner, gezonder en merkbaar frisser leefcomfort, dag in, dag uit. De AirClean UltraFine-serie combineert <span class="ultrafine-brochure-accent">ESP en ESD</span> voor professionele ruimtes waar schone lucht elke dag telt.</p>
                     <ul class="ultrafine-brochure-points">
-                      <li><strong>ESP en ESD-technologie</strong> voor effectieve luchtreiniging in dagelijks gebruik.</li>
+                      <li><strong>ESP en ESD-technologie</strong> De GUC4184 ESP-filter en GUC1223 E-filter vormen samen een krachtig duo voor fijnstof, geuren, allergenen en micro-organismen.</li>
                       <li><strong>Lage luchtweerstand</strong> voor een rustige luchtstroom en efficiënt energieverbruik.</li>
-                      <li><strong>Onderhoudsvriendelijke opbouw</strong> voor kantoren, zorg, onderwijs en andere professionele omgevingen.</li>
+                      <li><strong>Lange levensduur</strong> Constante kwaliteit over circa 10 tot 15 jaar, met een vaatwasserbestendige ESP-plaatmodule.</li>
                     </ul>
-                    <p class="ultrafine-brochure-closing">Geschikt voor ruimtes waar schone lucht elke dag betrouwbaar beschikbaar moet zijn.</p>
+                    <p class="ultrafine-brochure-closing">Het resultaat: schoner, gezonder en merkbaar frisser leefcomfort, dag in, dag uit.</p>
                   </div>
                 </div>
               </div>
@@ -1759,8 +1801,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         <div class="row justify-content-center text-center mb-4 mb-lg-5">
           <div class="col-lg-8">
             <p class="small text-uppercase text-primary fw-700 mb-2">Toepassingen</p>
-            <h2>Geschikt voor ruimtes waar luchtkwaliteit direct voelbaar is</h2>
-            <p class="mb-0">UltraFine is inzetbaar in omgevingen waar veel mensen samenkomen, waar comfort belangrijk is en waar een stabiele luchtkwaliteit direct bijdraagt aan de beleving van de ruimte.</p>
+            <h2>Bewezen in professionele omgevingen</h2>
+            <p class="mb-0">De AirClean UltraFine heeft zich inmiddels bewezen in kantoren, winkels, horeca, sportlocaties, zorgomgevingen en klaslokalen waar luchtkwaliteit direct merkbaar is.</p>
           </div>
         </div>
 
@@ -1782,7 +1824,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                   <div class="ultrafine-app-slide-copy">
                     <span class="ultrafine-app-slide-label">Toepassing</span>
                     <h3>Kantoor</h3>
-                    <p>Frissere lucht en meer comfort bij langdurige bezetting, overlegruimtes en gesloten werkzones.</p>
+                    <p>Permanent thuiswerken is voor lang niet alle medewerkers perfect. De AirClean UltraFine maakt een veilig kantoor mogelijk, waardoor medewerkers weer dagelijks op kantoor kunnen werken.</p>
                   </div>
                 </div>
               </article>
@@ -1793,8 +1835,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <div class="ultrafine-app-slide-content">
                   <div class="ultrafine-app-slide-copy">
                     <span class="ultrafine-app-slide-label">Toepassing</span>
-                    <h3>Onderwijs</h3>
-                    <p>Meer grip op luchtkwaliteit in klaslokalen, studieplekken en ruimtes met veel wisselende aanwezigheid.</p>
+                    <h3>Klaslokalen</h3>
+                    <p>De AirClean UltraFine heeft zich inmiddels bewezen in klaslokalen en andere ruimtes waar veel mensen langere tijd samen aanwezig zijn.</p>
                   </div>
                 </div>
               </article>
@@ -1805,8 +1847,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <div class="ultrafine-app-slide-content">
                   <div class="ultrafine-app-slide-copy">
                     <span class="ultrafine-app-slide-label">Toepassing</span>
-                    <h3>Zorg</h3>
-                    <p>Ondersteunt een hygienischer binnenklimaat voor bezoekers, personeel en patientgerichte omgevingen.</p>
+                    <h3>Zorginstelling</h3>
+                    <p>De AirClean UltraFine zorgt voor een continue zuivering van de lucht en vermindert de verspreiding van bacteri&euml;n, virussen en aerosolen aanzienlijk.</p>
                   </div>
                 </div>
               </article>
@@ -1818,7 +1860,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                   <div class="ultrafine-app-slide-copy">
                     <span class="ultrafine-app-slide-label">Toepassing</span>
                     <h3>Horeca</h3>
-                    <p>Een prettigere luchtbeleving in restaurants, lobby's, ontvangstruimtes en andere gastvrije settings.</p>
+                    <p>Onze AirCleaner brengt de luchtkwaliteit in horecagelegenheden op niveau, zodat de focus op het verzorgen en entertainen van gasten kan blijven.</p>
                   </div>
                 </div>
               </article>
@@ -1829,8 +1871,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <div class="ultrafine-app-slide-content">
                   <div class="ultrafine-app-slide-copy">
                     <span class="ultrafine-app-slide-label">Toepassing</span>
-                    <h3>Retail</h3>
-                    <p>Een constanter binnenklimaat voor showrooms, winkels en looproutes met continue bezoekersstromen.</p>
+                    <h3>Detailhandel</h3>
+                    <p>In de detailhandel komen veel verschillende mensen met elkaar in aanraking. De AirClean UltraFine zorgt voor een veilig binnenklimaat voor klanten en medewerkers.</p>
                   </div>
                 </div>
               </article>
@@ -1841,8 +1883,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <div class="ultrafine-app-slide-content">
                   <div class="ultrafine-app-slide-copy">
                     <span class="ultrafine-app-slide-label">Toepassing</span>
-                    <h3>Sport</h3>
-                    <p>Meer controle over luchtkwaliteit op plekken waar inspanning, warmte en hogere luchtbelasting samenkomen.</p>
+                    <h3>Sportaccommodatie</h3>
+                    <p>Door intensieve inspanning worden veel aerosolen geproduceerd. De AirClean UltraFine is met zijn plasmatechnologie in staat deze aerosolen onschadelijk te maken.</p>
                   </div>
                 </div>
               </article>
@@ -1862,8 +1904,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         <div class="row g-4 g-lg-5 align-items-start">
           <div class="col-lg-6">
             <p class="small text-uppercase text-primary fw-700 mb-2">Techniek en specificaties</p>
-            <h2>Gebouwd voor dagelijkse professionele inzet</h2>
-            <p class="mb-4">AirClean UltraFine combineert recirculatie, hoge deeltjesafvang en een onderhoudsvriendelijke opbouw in een compacte unit. Daarmee is het systeem geschikt voor organisaties die betere lucht willen zonder zwaar filteronderhoud of hoge luchtweerstand.</p>
+            <h2>Gebouwd voor constante kwaliteit en lage luchtweerstand</h2>
+            <p class="mb-4">In tegenstelling tot conventionele filtersystemen kent de ESP geen dichte vezelstructuur die de luchtstroom belemmert. Daardoor ontstaat er geen tot weinig luchtweerstand, met lager energieverbruik, minder geluid en minder vervanging en afval.</p>
 
             <div class="row g-3 mb-4">
               <div class="col-sm-6">
@@ -1897,7 +1939,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <ul class="mb-0">
                   <li>Minder energieverlies omdat ventilatoren minder tegendruk hoeven te overwinnen.</li>
                   <li>Minder geluid dankzij een vrijere luchtstroom en rustiger recirculatiegedrag.</li>
-                  <li>Onderhoudsvriendelijk door herbruikbare ESP-platen en minder vervangingsmateriaal.</li>
+                      <li>Onderhoudsvriendelijk door vaatwasbestendige ESP-platen en minder vervangingsmateriaal.</li>
                   <li>Beschikbaar in configuraties voor vloerinzet en uitbreidbare plafondtoepassingen.</li>
                 </ul>
               </div>
@@ -1917,8 +1959,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
               <div class="ultrafine-video-callout ultrafine-video-callout--right ultrafine-video-callout--ebm">
                 <div class="ultrafine-video-callout-line" aria-hidden="true"></div>
                 <div class="ultrafine-video-callout-card">
-                  <strong>EBM motor</strong>
-                  <p>De EBM-motor zorgt voor een stabiele, stille en energiezuinige luchtstroom bij continue professionele inzet.</p>
+                  <strong>Lage luchtweerstand</strong>
+                  <p>De lucht stroomt soepel door het systeem, waardoor ventilatoren minder kracht hoeven te leveren en het geluidsniveau beperkt blijft.</p>
                 </div>
               </div>
               <div class="ultrafine-video-free">
@@ -1929,15 +1971,15 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
               <div class="ultrafine-video-callout ultrafine-video-callout--left ultrafine-video-callout--filter">
                 <div class="ultrafine-video-callout-line" aria-hidden="true"></div>
                 <div class="ultrafine-video-callout-card">
-                  <strong>E-Filter met ESD</strong>
-                  <p>De E-filter met ESD-opbouw ondersteunt de afvang van vervuiling met lage luchtweerstand en een onderhoudsvriendelijke werking.</p>
+                  <strong>ESD-filter</strong>
+                  <p>Het ESD-filter gebruikt hoogspanning voor het afbreken van grove verontreinigingen zoals vet, fijnstof, pollen en bacteri&euml;n.</p>
                 </div>
               </div>
               <div class="ultrafine-video-callout ultrafine-video-callout--right ultrafine-video-callout--esp">
                 <div class="ultrafine-video-callout-line" aria-hidden="true"></div>
                 <div class="ultrafine-video-callout-card">
-                  <strong>ESP-module</strong>
-                  <p>De aparte ESP-module helpt fijne deeltjes elektrostatisch te laden en af te vangen binnen de technische opbouw van de unit.</p>
+                  <strong>Plasma-elementen</strong>
+                  <p>Met hoogspanning wordt plasma gecre&euml;erd dat geuren en micro-organismen neutraliseert.</p>
                 </div>
               </div>
             </div>
@@ -1951,7 +1993,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
             <div class="col-lg-9">
               <p class="small text-uppercase fw-700 mb-2">Validatie en techniek</p>
               <h2>Onderbouwd met metingen, onderzoek en cleanroom-principes</h2>
-              <p class="mb-0">Onderzoek, meetrapporten en de technische opbouw geven extra onderbouwing voor projecten waarin luchtkwaliteit aantoonbaar en betrouwbaar moet worden verbeterd.</p>
+              <p class="mb-0">Meetrapporten en onderzoek laten zien hoe UltraFine is opgebouwd voor projecten waarin luchtkwaliteit aantoonbaar en technisch onderbouwd moet zijn.</p>
             </div>
           </div>
 
@@ -1962,7 +2004,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                   <img src="wp-content/uploads/airclean-ultrafine/interfree.png" alt="Interflow validatie" loading="lazy">
                 </div>
                 <h3 class="h5">Getest door Interflow</h3>
-                <p>In een gecontroleerde testruimte behaalde UltraFine een reductiecurve die dicht bij een HEPA-unit lag. Daarmee krijgt de productclaim een concreet technisch fundament.</p>
+                <p>In samenwerking met Interflow BV is de PlasmaMade AirClean UltraFine getest in een gecontroleerde omgeving van 24,4 m&sup3; met 8 luchtwisselingen per uur. De hersteltijd lag met 24 minuten praktisch gelijk aan die van een HEPA-filterunit.</p>
                 <a href="wp-content/uploads/airclean-ultrafine/Interflow%20Onderzoek.pdf" title="Download het Interflow onderzoek" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download het onderzoek</a>
               </div>
             </div>
@@ -1972,7 +2014,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                   <img src="wp-content/uploads/airclean-ultrafine/clean.png" alt="ISO 6 en 7 cleanroom principes" loading="lazy">
                 </div>
                 <h3 class="h5">ISO 6/7-principes</h3>
-                <p>De filteropbouw volgt dezelfde gedachte als gecontroleerde cleanroomlucht: gericht op deeltjesreductie, hygiene en een constantere luchtkwaliteit.</p>
+                <p>De UltraFine-filter is ontwikkeld volgens dezelfde principes als een ISO 6/7-cleanroom: continu gefilterde, gecirculeerde en gecontroleerde lucht in een compacte oplossing.</p>
                 <a href="iso-omgeving.html" title="Meer informatie over ISO-omgevingen" class="btn btn-primary">Meer informatie over ISO-omgeving</a>
               </div>
             </div>
@@ -1982,7 +2024,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                   <img src="wp-content/uploads/airclean-ultrafine/hybfree.png" alt="Extra toevoer van buitenlucht" loading="lazy">
                 </div>
                 <h3 class="h5">Hybride buitenluchttoevoer</h3>
-                <p>Voor het plafondmodel is gecontroleerde toevoer van buitenlucht mogelijk. Daarmee combineer je recirculatie en ventilatie in een krachtiger totaalconcept.</p>
+                <p>Voor het plafondmodel is een optionele uitbreiding met extra buitenluchttoevoer beschikbaar, waardoor recirculeren en ventileren samenkomen in &eacute;&eacute;n ge&iuml;ntegreerd systeem.</p>
                 <a href="extra-toevoer.html" title="Meer informatie over extra toevoer" class="btn btn-primary">Meer over extra toevoer</a>
               </div>
             </div>
@@ -2064,6 +2106,12 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                   <button type="button" class="ultrafine-product-thumb" data-gallery-thumb data-image="wp-content/uploads/airclean-ultrafine/ultra-a-transparent.png" data-alt="AirClean UltraFine rechtop productbeeld" data-caption="Extra productbeeld van AirClean UltraFine">
                     <img src="wp-content/uploads/airclean-ultrafine/ultra-a-transparent.png" alt="Miniatuur van AirClean UltraFine rechtop" loading="lazy">
                   </button>
+                  <button type="button" class="ultrafine-product-thumb" data-gallery-thumb data-image="wp-content/uploads/airclean-ultrafine/esp.png" data-alt="ESP-module van AirClean UltraFine" data-caption="ESP-module van AirClean UltraFine">
+                    <img src="wp-content/uploads/airclean-ultrafine/esp.png" alt="Miniatuur van de ESP-module" loading="lazy">
+                  </button>
+                  <button type="button" class="ultrafine-product-thumb" data-gallery-thumb data-image="wp-content/uploads/airclean-ultrafine/esp-in-vaatwasser.png" data-alt="ESP-module in de vaatwasser" data-caption="ESP-module in de vaatwasser">
+                    <img src="wp-content/uploads/airclean-ultrafine/esp-in-vaatwasser.png" alt="Miniatuur van de ESP-module in de vaatwasser" loading="lazy">
+                  </button>
                 </div>
                 <p class="ultrafine-product-gallery-caption" data-gallery-caption>Vrijstaand productbeeld van AirClean UltraFine</p>
                 <div class="ultrafine-product-certifications">
@@ -2078,7 +2126,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                       <h3 class="ultrafine-product-title">AirClean UltraFine<span>Vrijstaande luchtreiniging voor ruimtes waar stabiele luchtkwaliteit, rustige werking en compacte plaatsing belangrijk zijn.</span></h3>
                     </div>
                   </div>
-                  <p class="ultrafine-product-summary">De unit combineert een stille EBM-motor, een E-filter met ESD en een aparte ESP-module in &eacute;&eacute;n compacte oplossing voor dagelijks professioneel gebruik.</p>
+                  <p class="ultrafine-product-summary">De GUC4184 ESP-filter en de GUC1223 E-filter met ESD-technologie vormen samen een krachtig duo dat fijnstof, geuren, allergenen en micro-organismen verwijdert.</p>
                 </div>
                 <div class="ultrafine-product-meta-grid" aria-label="Kerngegevens van AirClean UltraFine">
                   <div class="ultrafine-product-meta">
@@ -2106,33 +2154,33 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                   <div class="ultrafine-product-detail-card">
                     <p class="ultrafine-product-section-title">Waarom dit product</p>
                     <ul class="ultrafine-product-points">
-                      <li>Vrijstaande oplossing die compact in bestaande ruimtes kan worden geplaatst.</li>
-                      <li>Stille EBM-motor voor dagelijks gebruik in bezette omgevingen.</li>
-                      <li>Opbouw met E-filter met ESD en een aparte ESP-module.</li>
+                      <li>Schoner, gezonder en merkbaar frisser leefcomfort, dag in, dag uit.</li>
+                      <li>Geen tot weinig luchtweerstand dankzij de ESP zonder dichte vezelstructuur.</li>
+                      <li>Constante kwaliteit over circa 10 tot 15 jaar met een vaatwasserbestendige ESP-plaatmodule.</li>
                     </ul>
                   </div>
                   <div class="ultrafine-product-detail-card">
                     <p class="ultrafine-product-section-title">Technische opbouw</p>
                     <div class="ultrafine-product-spec-list">
                       <div class="ultrafine-product-spec-item" tabindex="0">
-                        <strong>EBM-motor</strong>
-                        <span>Zorgt voor stabiele luchtverplaatsing met aandacht voor geluidscomfort.</span>
+                        <strong>Lage luchtweerstand</strong>
+                        <span>Geen dichte vezelstructuur die de luchtstroom belemmert.</span>
                         <div class="ultrafine-product-spec-detail">
-                          <p>De EBM-motor houdt de luchtstroom gelijkmatig en goed regelbaar, zodat de unit rustig kan blijven werken bij dagelijks gebruik. Daardoor ontstaat een constantere luchtverplaatsing met minder onnodig geluid en een effici&euml;ntere inzet van de beschikbare capaciteit.</p>
+                          <p>In tegenstelling tot conventionele filtersystemen kent de ESP geen dichte vezelstructuur die de luchtstroom belemmert. Daardoor ontstaat er geen tot weinig luchtweerstand, met lager energieverbruik en minder geluid.</p>
                         </div>
                       </div>
                       <div class="ultrafine-product-spec-item" tabindex="0">
-                        <strong>E-filter met ESD</strong>
-                        <span>Onderdeel van de filteropbouw voor professionele inzet en onderhoudsvriendelijkheid.</span>
+                        <strong>ESD-filter</strong>
+                        <span>Hoogspanning voor het afbreken van grove verontreinigingen.</span>
                         <div class="ultrafine-product-spec-detail">
-                          <p>Het E-filter met ESD vormt een belangrijk deel van de filteropbouw waarin vervuiling gecontroleerd uit de luchtstroom wordt gehaald, terwijl de lucht relatief vrij kan blijven doorstromen. De ESD-opbouw ondersteunt een stabiele elektrostatische werking binnen het filterdeel, wat helpt om prestaties en onderhoud beheersbaar te houden.</p>
+                          <p>Het ESD-filter gebruikt hoogspanning voor het afbreken van grove verontreinigingen zoals vet, fijnstof, pollen en bacteri&euml;n.</p>
                         </div>
                       </div>
                       <div class="ultrafine-product-spec-item" tabindex="0">
-                        <strong>ESP-module</strong>
-                        <span>Aparte module binnen de technische configuratie van de unit.</span>
+                        <strong>Plasma-elementen</strong>
+                        <span>Neutraliseren geuren en micro-organismen in de luchtstroom.</span>
                         <div class="ultrafine-product-spec-detail">
-                          <p>De aparte ESP-module werkt met elektrostatische lading om fijne deeltjes gericht uit de luchtstroom te laten neerslaan op opvangoppervlakken in de unit. Juist bij de kleinere fracties helpt dit om effectief te reinigen zonder dat de luchtweg onnodig zwaar wordt belast.</p>
+                          <p>Met hoogspanning wordt plasma gecre&euml;erd. Dat plasma neutraliseert geuren en micro-organismen binnen de technische opbouw van de unit.</p>
                         </div>
                       </div>
                     </div>
@@ -2141,9 +2189,9 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <div class="ultrafine-product-actions">
                   <a href="contact/index.html" title="Vraag informatie aan over AirClean UltraFine" class="btn btn-primary">Informatie aanvragen</a>
                   <a href="wp-content/uploads/airclean-ultrafine/PLASMA-5060%20Fldr-Ultrafine-EU-NL-A4-Df%20(1).pdf" title="Download de productsheet van AirClean UltraFine" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer" download>Download productsheet</a>
-                  <a href="wp-content/uploads/airclean-ultrafine/PLASMA-5060%20Fldr-Ultrafine-EU-NL-A4-Df%20(1).pdf" title="Download de brochure van AirClean UltraFine" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">Download brochure</a>
+                  <a href="wp-content/uploads/airclean-ultrafine/PLASMA-5060%20Fldr-Ultrafine-EU-NL-A4-Df%20(1).pdf" title="Download de documentatie van AirClean UltraFine" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">Download documentatie</a>
                 </div>
-                <p class="ultrafine-product-note">Capaciteit en configuratie worden per project afgestemd.</p>
+                <p class="ultrafine-product-note">Geschikt voor ruimtes vanaf 20 m&sup2; tot 150 m&sup2;; in grotere ruimtes kunnen meerdere AirCleaners per ruimte worden geplaatst.</p>
               </div>
             </article>
           </div>

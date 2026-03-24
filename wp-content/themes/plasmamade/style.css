@@ -1387,3 +1387,45 @@ Teksvlak boven button class flex-grow-1 */
 #moove_gdpr_cookie_info_bar .moove-gdpr-button-holder {
   justify-content: flex-end !important;
 }
+
+/* Mobile layout safeguards */
+.main-content .row,
+.main-content [class*="col-"],
+.main-content .contentbox,
+.main-content .card-body,
+.main-content .wpb_wrapper,
+.main-content .woocommerce-LoopProduct-link,
+.main-content .woocommerce-loop-product__title {
+  min-width: 0;
+}
+
+.main-content :is(h1, h2, h3, h4, h5, h6, p, li, a, button, .btn, .nav-link, .dropdown-item, .woocommerce-loop-product__title, .price) {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 767px) {
+  body.home .main-content {
+    overflow-x: hidden;
+  }
+
+  .main-content .btn,
+  .main-content .navbar-mobile a,
+  .main-content .dropdown-item,
+  .main-content .woocommerce-loop-product__title {
+    white-space: normal;
+  }
+
+  .main-content .wpb_single_image.position-absolute.top-0.start-0.mt-n7.ms-n7 {
+    left: 0 !important;
+    top: .75rem !important;
+    width: min(9rem, 34vw) !important;
+    max-width: 34vw !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .main-content .wpb_single_image.position-absolute.top-0.start-0.mt-n7.ms-n7 img {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

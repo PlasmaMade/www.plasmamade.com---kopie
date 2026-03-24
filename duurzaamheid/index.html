@@ -27,6 +27,25 @@
   }
   .sustain-visual-wrap {
     position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(160px, 210px);
+    grid-template-areas:
+      "main main"
+      ". overlay";
+    gap: 1.1rem;
+    max-width: 430px;
+    margin-inline: auto;
+  }
+  .sustain-visual-wrap::before {
+    content: "";
+    position: absolute;
+    top: 2.75rem;
+    left: -1.2rem;
+    width: clamp(7rem, 16vw, 11rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(32,164,62,.2) 0%, rgba(32,164,62,0) 72%);
+    filter: blur(8px);
   }
   .sustain-visual-main,
   .sustain-visual-overlay,
@@ -43,45 +62,78 @@
     overflow: hidden;
   }
   .sustain-visual-main {
+    grid-area: main;
+    position: relative;
+    z-index: 1;
     background: linear-gradient(180deg, #f4f8f5 0%, #ffffff 100%);
   }
   .sustain-visual-main img,
-  .sustain-visual-overlay img,
-  .sustain-visual-band img {
+  .sustain-visual-overlay video {
     display: block;
     width: 100%;
-    height: auto;
+  }
+  .sustain-visual-main img {
+    min-height: 31rem;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
   }
   .sustain-visual-overlay {
-    position: absolute;
-    top: 1.15rem;
-    left: -1rem;
-    width: min(52%, 210px);
+    grid-area: overlay;
+    align-self: start;
+    justify-self: end;
+    width: 100%;
+    z-index: 2;
     background: #ffffff;
+    transform: translateY(-1.35rem);
+    box-shadow: 0 1.3rem 2.2rem rgba(3,40,61,.14);
+  }
+  .sustain-visual-overlay video {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background: #dfe8e2;
   }
   .sustain-visual-band {
-    margin-top: 1.35rem;
+    margin-top: 1rem;
+    padding: 1rem;
     background: linear-gradient(180deg, #f4f8f5 0%, #ffffff 100%);
   }
+  .sustain-visual-main-caption,
   .sustain-visual-caption {
     padding: .85rem .95rem .95rem;
   }
+  .sustain-visual-main-caption {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    left: 1rem;
+    border-radius: 1.15rem;
+    background: rgba(255,255,255,.84);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 .85rem 1.6rem rgba(3,40,61,.12);
+  }
+  .sustain-visual-main-caption strong,
   .sustain-visual-caption strong,
   .sustain-content h1,
   .sustain-content h2,
   .sustain-process-band h2 {
     color: #03283d;
   }
+  .sustain-visual-main-caption strong,
   .sustain-visual-caption strong {
     display: block;
     margin-bottom: .2rem;
     font-size: .98rem;
   }
+  .sustain-visual-main-caption span,
   .sustain-visual-caption span {
     display: block;
     color: #58717b;
     font-size: .92rem;
     line-height: 1.55;
+  }
+  .sustain-visual-main-caption span + span,
+  .sustain-visual-caption span + span {
+    margin-top: .65rem;
   }
   .sustain-content h1 {
     margin-bottom: 1rem;
@@ -195,10 +247,12 @@
   @media (max-width: 991px) {
     .sustain-visual-wrap {
       margin-bottom: 2rem;
-      padding-left: 1rem;
     }
     .sustain-visual-overlay {
-      left: 0;
+      transform: translateY(-1rem);
+    }
+    .sustain-visual-main img {
+      min-height: 26rem;
     }
     .sustain-process-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -209,14 +263,29 @@
       padding-top: 1.5rem;
     }
     .sustain-visual-wrap {
-      padding-left: 0;
+      max-width: none;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "main"
+        "overlay";
+    }
+    .sustain-visual-wrap::before {
+      top: 1rem;
+      right: .65rem;
+      left: auto;
     }
     .sustain-visual-overlay {
-      position: relative;
-      top: auto;
-      left: auto;
-      width: 100%;
-      margin-bottom: 1rem;
+      width: min(88%, 290px);
+      margin: -2.15rem 0 0 auto;
+      transform: none;
+    }
+    .sustain-visual-main img {
+      min-height: 0;
+      aspect-ratio: 16 / 15;
+    }
+    .sustain-visual-band {
+      margin: 0;
+      margin-top: 1rem;
     }
     .sustain-process-grid {
       grid-template-columns: 1fr;
@@ -298,20 +367,25 @@
       <section class="row sustain-layout">
         <div class="col-md-4">
           <div class="sustain-visual-wrap">
-            <figure class="sustain-visual-overlay">
-              <img src="https://images.pexels.com/photos/9574573/pexels-photo-9574573.jpeg?cs=srgb&dl=pexels-tima-miroshnichenko-9574573.jpg&fm=jpg" alt="Wetenschappers aan het werk in een modern laboratorium" loading="lazy">
-            </figure>
             <figure class="sustain-visual-main">
-              <img src="https://images.pexels.com/photos/8089258/pexels-photo-8089258.jpeg?cs=srgb&dl=pexels-artbovich-8089258.jpg&fm=jpg" alt="Moderne keukeninterieur als voorbeeld van recirculerende keukenventilatie" loading="lazy">
-            </figure>
-            <figure class="sustain-visual-band">
-              <img src="https://images.pexels.com/photos/34286024/pexels-photo-34286024.jpeg?cs=srgb&dl=pexels-fran-34286024.jpg&fm=jpg" alt="Gerecyclede kunststofgranulaten als grondstof voor nieuwe toepassingen" loading="lazy">
-              <figcaption class="sustain-visual-caption">
-                <strong>Circulair materiaalgebruik</strong>
-                <span>Materialen blijven zo lang mogelijk in de keten en worden opnieuw ingezet waar dat verantwoord kan.</span>
+              <img src="../foto%20linkedin%20en%20insta.JPG" alt="Wonderwoods in Utrecht waar natuur en duurzame woontechnologie samenkomen" loading="lazy">
+              <figcaption class="sustain-visual-main-caption">
+                <strong>Wonderwoods Utrecht</strong>
               </figcaption>
             </figure>
+            <figure class="sustain-visual-overlay">
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Recyclevideo van het PlasmaMade recycleproces">
+                <source src="../video%20recycle.mp4" type="video/mp4">
+              </video>
+            </figure>
           </div>
+          <aside class="sustain-visual-band" aria-label="Wonderwoods en PlasmaMade">
+            <div class="sustain-visual-caption">
+              <strong>In wooncomplex Wonderwoods in Utrecht komt natuur en technologie letterlijk samen.</strong>
+              <span>Hier zijn de appartementen uitgevoerd met PlasmaMade E-filters, zodat bewoners niet alleen tussen het groen wonen, maar ook binnen de zuiverste lucht inademen.</span>
+              <span>Een gezond binnenklimaat hoort bij toekomstbestendig wonen. Zo bouwen we aan steden waar mensen én natuur kunnen ademen.</span>
+            </div>
+          </aside>
         </div>
 
         <div class="col-md-8 ps-lg-7">
@@ -362,7 +436,7 @@
 
             <div class="sustain-text-block">
               <h2>Onze visie</h2>
-              <p>Wij geloven dat moderne ventilatie niet alleen functioneel moet zijn, maar ook duurzaam. Door te kiezen voor een lange levensduur, recyclebare materialen en een eigen retour- en recycleproces dragen wij bij aan een schoner leefmilieu en een lagere CO₂-voetafdruk. Met onze technologie maken wij duurzame luchtzuivering toegankelijk voor consumenten, ontwerpers en bouwers die bewust kiezen voor kwaliteit en verantwoordelijkheid.</p>
+              <p>Wij geloven dat moderne ventilatie niet alleen functioneel moet zijn, maar ook duurzaam. Door te kiezen voor een lange levensduur, recyclebare materialen en een eigen retour- en recycleproces dragen wij bij aan een schoner leefmilieu en een lagere CO2-voetafdruk. Met onze technologie maken wij duurzame luchtzuivering toegankelijk voor consumenten, ontwerpers en bouwers die bewust kiezen voor kwaliteit en verantwoordelijkheid.</p>
             </div>
           </div>
         </div>
