@@ -550,84 +550,194 @@ De ontwerpers/makers hebben begepen hoe je een huis ontdoet van schadelijke stof
 		
 <style>
 .partner-section {
+    position: relative;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: clamp(2.2rem, 4vw, 3.4rem);
+    border-radius: 1.6rem;
+    border: 1px solid rgba(3,40,61,.08);
+    background:
+      radial-gradient(circle at top right, rgba(32,164,62,.12) 0%, rgba(32,164,62,0) 24%),
+      linear-gradient(180deg, #f7faf8 0%, #ffffff 100%);
+    box-shadow: 0 1.2rem 2.6rem rgba(3,40,61,.08);
     text-align: center;
+    overflow: hidden;
 }
 
 .partner-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.partner-section h2 {
+    margin-bottom: .55rem;
+    color: #03283d;
+}
+
+.partner-section > p {
+    max-width: 42rem;
+    margin: 0 auto;
+    color: #48636c;
+    font-size: 1rem;
+    line-height: 1.65;
 }
 
 .partner-logo {
-    width: 150px;
-    height: 90px;
+    min-width: 0;
+}
+
+.partner-logo a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .85rem;
+    height: 100%;
+    min-height: 158px;
+    padding: 1.15rem 1rem 1rem;
+    border-radius: 1.15rem;
+    border: 1px solid rgba(3,40,61,.08);
+    background: rgba(255,255,255,.96);
+    box-shadow: 0 .85rem 1.8rem rgba(3,40,61,.05);
+    text-decoration: none;
+    transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+.partner-logo a:hover,
+.partner-logo a:focus-visible {
+    transform: translateY(-3px);
+    border-color: rgba(32,164,62,.32);
+    box-shadow: 0 1rem 2rem rgba(3,40,61,.1);
+    outline: none;
+}
+
+.partner-logo-mark {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    min-height: 72px;
+    padding: .35rem;
+}
+
+.partner-logo-mark--teamnl {
+    min-height: 78px;
+}
+
+.partner-teamnl-wordmark {
+    display: inline-block;
+    color: #ff7a1a;
+    font-size: clamp(1.05rem, 1.6vw, 1.45rem);
+    font-weight: 900;
+    line-height: .95;
+    letter-spacing: -.04em;
+    text-align: center;
+    text-transform: none;
 }
 
 .partner-logo img {
-    max-width: 100%;
-    max-height: 100%;
+    display: block;
+    max-width: min(100%, 150px);
+    max-height: 56px;
     object-fit: contain;
+    filter: saturate(.96);
+}
+
+.partner-logo-label {
+    color: #03283d;
+    font-size: .92rem;
+    font-weight: 600;
+    line-height: 1.3;
 }
 
 @media (max-width: 768px) {
-    .partner-logo {
-        width: 110px;
-        height: 70px;
+    .partner-section {
+        padding: 1.5rem 1rem 1.7rem;
+        border-radius: 1.2rem;
+    }
+
+    .partner-logos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: .8rem;
+        margin-top: 1.5rem;
+    }
+
+    .partner-logo a {
+        min-height: 136px;
+        padding: .95rem .75rem .85rem;
+    }
+
+    .partner-logo-mark {
+        min-height: 60px;
+    }
+
+    .partner-logo-mark--teamnl {
+        min-height: 68px;
+    }
+
+    .partner-teamnl-wordmark {
+        font-size: .95rem;
+    }
+
+    .partner-logo img {
+        max-width: min(100%, 120px);
+        max-height: 44px;
+    }
+
+    .partner-logo-label {
+        font-size: .84rem;
     }
 }
 </style>
 
 <div class="partner-section">
     <h2>Onze Partners</h2>
+    <p>Samen met kennispartners, brancheorganisaties en topsportinitiatieven bouwen we aan betere luchtkwaliteit en sterkere oplossingen in de praktijk.</p>
 
-    <div class="partner-logos">
+    <ul class="partner-logos">
 
-        <div class="partner-logo">
-           <a href="https://www.keukenwiki.nl/ambassadeur-plasmamade.html" target="_blank">
-<img src="wp-content/uploads/2025/02/keukenwiki.png" width="80" height="80">
-</a>
-        </div>
+        <li class="partner-logo">
+           <a href="https://www.keukenwiki.nl/ambassadeur-plasmamade.html" target="_blank" rel="noopener noreferrer" aria-label="Bezoek KeukenWiki">
+            <span class="partner-logo-mark"><img src="wp-content/uploads/2025/02/keukenwiki.png" alt="KeukenWiki" loading="lazy" decoding="async"></span>
+            <span class="partner-logo-label">KeukenWiki</span>
+           </a>
+        </li>
 
-        <div class="partner-logo">
-			<a href="https://claireproject.nl/" target="_blank">
-            <img src="wp-content/uploads/2025/02/claire.svg" alt="Claire">
-       
+        <li class="partner-logo">
+			<a href="https://claireproject.nl/" target="_blank" rel="noopener noreferrer" aria-label="Bezoek CLAIRE">
+            <span class="partner-logo-mark"><img src="wp-content/uploads/2025/02/claire.svg" alt="CLAIRE" loading="lazy" decoding="async"></span>
+            <span class="partner-logo-label">CLAIRE</span>
 			</a>
- </div>
-        <div class="partner-logo">
-			<a href="https://www.tue.nl/en//" target="_blank">
-            <img src="wp-content/uploads/2025/02/TU.png" alt="TU"></a>
-        </div>
+        </li>
+        <li class="partner-logo">
+			<a href="https://www.tue.nl/en//" target="_blank" rel="noopener noreferrer" aria-label="Bezoek TU Eindhoven">
+            <span class="partner-logo-mark"><img src="wp-content/uploads/2025/02/TU.png" alt="TU Eindhoven" loading="lazy" decoding="async"></span>
+            <span class="partner-logo-label">TU Eindhoven</span></a>
+        </li>
 
-        <div class="partner-logo">	<a href="https://www.binnenklimaatnederland.nl/" target="_blank">
-            <img src="wp-content/uploads/2025/02/Binnenklimaat.png" alt="Binnenklimaat">
+        <li class="partner-logo">	<a href="https://www.binnenklimaatnederland.nl/" target="_blank" rel="noopener noreferrer" aria-label="Bezoek Binnenklimaat Nederland">
+            <span class="partner-logo-mark"><img src="wp-content/uploads/2025/02/Binnenklimaat.png" alt="Binnenklimaat Nederland" loading="lazy" decoding="async"></span>
+            <span class="partner-logo-label">Binnenklimaat Nederland</span>
 			</a>
-        </div>
+        </li>
 
-       <div class="wpb_text_column wpb_content_element">
-	<div class="wpb_wrapper">
-		<p>
-			<a href="https://www.teamnl.org/" target="_blank"><img loading="lazy" decoding="async"
-			class="alignnone wp-image-1540 size-thumbnail"
-			src="wp-content/uploads/2025/02/TeamNL.png"
-			alt="CE"
-			width="300"
-			height="300" /></a>
-		</p>
-	</div>
-</div>
-        <div class="partner-logo"><a href="https://teamessent.nl/" target="_blank">
-            <img src="wp-content/uploads/2025/02/essent.png" alt="Essent"></a>
-        </div>
+        <li class="partner-logo">
+			<a href="https://www.teamnl.org/" target="_blank" rel="noopener noreferrer" aria-label="Bezoek TeamNL">
+            <span class="partner-logo-mark partner-logo-mark--teamnl" aria-hidden="true">
+              <span class="partner-teamnl-wordmark">Olympische<br>spelen</span>
+            </span>
+            <span class="partner-logo-label">TeamNL</span></a>
+        </li>
+        <li class="partner-logo"><a href="https://teamessent.nl/" target="_blank" rel="noopener noreferrer" aria-label="Bezoek Team Essent">
+            <span class="partner-logo-mark"><img src="wp-content/uploads/2025/02/essent.png" alt="Team Essent" loading="lazy" decoding="async"></span>
+            <span class="partner-logo-label">Team Essent</span></a>
+        </li>
 
-    </div>
+    </ul>
 </div>
         </div>
     </div>
