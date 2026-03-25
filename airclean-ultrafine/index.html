@@ -2552,7 +2552,6 @@ var gdpr_consent__cookies = "strict"
 			galleries.forEach(function (gallery) {
 				var mainImage = gallery.querySelector('[data-gallery-main-image]');
 				var caption = gallery.querySelector('[data-gallery-caption]');
-				var mainFigure = gallery.querySelector('.ultrafine-product-main');
 				var thumbs = Array.prototype.slice.call(gallery.querySelectorAll('[data-gallery-thumb]'));
 
 				function setActive(button) {
@@ -2569,16 +2568,11 @@ var gdpr_consent__cookies = "strict"
 					var imageSrc = button.getAttribute('data-image');
 					var imageAlt = button.getAttribute('data-alt') || '';
 					var imageCaption = button.getAttribute('data-caption') || '';
-					var showLogo = button.getAttribute('data-gallery-logo') === 'true';
 
 					if (imageSrc) {
 						mainImage.src = imageSrc;
 					}
 					mainImage.alt = imageAlt;
-
-					if (mainFigure) {
-						mainFigure.classList.toggle('has-unit-logo', showLogo);
-					}
 
 					if (caption) {
 						caption.textContent = imageCaption;
