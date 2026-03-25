@@ -584,6 +584,27 @@ input[disabled='disabled'][type='submit'] {
   font-size: 1rem;
 }
 
+.nav-link-ultrafine-title,
+.nav-link-ultrafine-subtitle {
+	display: block;
+	white-space: nowrap;
+}
+
+.nav-link-ultrafine-title {
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	color: inherit;
+}
+
+.nav-link-ultrafine-subtitle {
+	color: var(--bs-primary);
+	font-size: .7rem;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1.05;
+}
+
 .navbar-nav li a.nav-link:hover {
 	color: var(--bs-primary) !important;
 	/* border-bottom: 2px solid #fff; */
@@ -609,6 +630,94 @@ input[disabled='disabled'][type='submit'] {
 	.navbar-nav li a.nav-link {
 		margin-right: 5px;
     margin-left: 5px;
+	}
+
+	.navbar-nav li a.nav-link.nav-link-ultrafine.active,
+	.navbar-nav li.current-menu-item a.nav-link.nav-link-ultrafine,
+	.navbar-nav li.current_page_parent a.nav-link.nav-link-ultrafine,
+	.navbar-nav li.current-page-ancestor a.nav-link.nav-link-ultrafine,
+	.navbar-nav li.current-menu-parent a.nav-link.nav-link-ultrafine,
+	.navbar-nav li.current-menu-ancestor a.nav-link.nav-link-ultrafine {
+		border-bottom: none;
+	}
+}
+
+@media (min-width: 1200px) {
+	.navbar .navbar-collapse {
+		align-items: center;
+	}
+
+	.navbar-nav {
+		flex-wrap: nowrap;
+		align-items: baseline;
+		gap: .25rem;
+	}
+
+	.navbar-nav > li {
+		flex: 0 0 auto;
+	}
+
+	.navbar-nav li a.nav-link {
+		margin-right: 0;
+		margin-left: 0;
+		padding: .15rem .35rem;
+		font-size: .92rem;
+		line-height: 1.18;
+		white-space: nowrap;
+	}
+
+	.navbar-nav li a.nav-link.nav-link-ultrafine {
+		display: inline-block;
+		position: relative;
+		padding-top: .15rem;
+		padding-bottom: .2rem;
+		vertical-align: baseline;
+		overflow: visible;
+	}
+
+	.navbar-nav li a.nav-link.nav-link-ultrafine .nav-link-ultrafine-title {
+		line-height: 1.18;
+		padding-bottom: .16rem;
+	}
+
+	.navbar-nav li a.nav-link.nav-link-ultrafine .nav-link-ultrafine-subtitle {
+		position: absolute;
+		top: calc(100% + .02rem);
+		left: 50%;
+		width: max-content;
+		transform: translate(-50%, -.18rem);
+		transform-origin: top center;
+		font-size: .53rem;
+		font-weight: 400;
+		line-height: 1;
+		text-align: center;
+		margin-top: 0;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity .22s ease, transform .26s cubic-bezier(.22,1,.36,1);
+	}
+
+	.navbar-nav li a.nav-link.nav-link-ultrafine:hover .nav-link-ultrafine-subtitle,
+	.navbar-nav li a.nav-link.nav-link-ultrafine:focus-visible .nav-link-ultrafine-subtitle,
+	.navbar-nav li a.nav-link.nav-link-ultrafine.active .nav-link-ultrafine-subtitle,
+	.navbar-nav li.current-menu-item a.nav-link.nav-link-ultrafine .nav-link-ultrafine-subtitle,
+	.navbar-nav li.current_page_parent a.nav-link.nav-link-ultrafine .nav-link-ultrafine-subtitle,
+	.navbar-nav li.current-page-ancestor a.nav-link.nav-link-ultrafine .nav-link-ultrafine-subtitle,
+	.navbar-nav li.current-menu-parent a.nav-link.nav-link-ultrafine .nav-link-ultrafine-subtitle,
+	.navbar-nav li.current-menu-ancestor a.nav-link.nav-link-ultrafine .nav-link-ultrafine-subtitle {
+		opacity: 1;
+		transform: translate(-50%, 0);
+	}
+
+	.navbar-nav li a.nav-link.nav-link-ultrafine.active .nav-link-ultrafine-title,
+	.navbar-nav li.current-menu-item a.nav-link.nav-link-ultrafine .nav-link-ultrafine-title,
+	.navbar-nav li.current_page_parent a.nav-link.nav-link-ultrafine .nav-link-ultrafine-title,
+	.navbar-nav li.current-page-ancestor a.nav-link.nav-link-ultrafine .nav-link-ultrafine-title,
+	.navbar-nav li.current-menu-parent a.nav-link.nav-link-ultrafine .nav-link-ultrafine-title,
+	.navbar-nav li.current-menu-ancestor a.nav-link.nav-link-ultrafine .nav-link-ultrafine-title {
+		display: inline-block;
+		padding-bottom: .16rem;
+		border-bottom: 2px solid var(--bs-primary);
 	}
 }
 
@@ -674,6 +783,23 @@ ul.navbar-mobile > li > a.nav-link {
   border-right: none;
   /* font-weight: 600;
   font-size: 19px; */
+}
+
+ul.navbar-mobile > li > a.nav-link.nav-link-ultrafine {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: .12rem;
+	padding-top: .15rem;
+	padding-bottom: .15rem;
+}
+
+ul.navbar-mobile > li > a.nav-link.nav-link-ultrafine .nav-link-ultrafine-title {
+	font-size: 1.05rem;
+}
+
+ul.navbar-mobile > li > a.nav-link.nav-link-ultrafine .nav-link-ultrafine-subtitle {
+	font-size: .76rem;
 }
 ul.navbar-mobile > li:last-child > a.nav-link,
 ul.navbar-mobile > li:last-child > a.nav-link:hover {

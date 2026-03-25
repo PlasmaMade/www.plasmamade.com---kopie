@@ -147,7 +147,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 					<ul id="menu-hoofdmenu" class="navbar-nav"><li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-home nav-item-32"><a href="index.html" class="nav-link">Home</a></li>
 <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-33"><a href="e-filters/index.html" class="nav-link">E-Filters</a></li>
 <li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-34"><a href="air-cleaners/index.html" class="nav-link">Air Cleaners</a></li>
-<li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-31 current-menu-item current_page_item"><a href="airclean-ultrafine/index.html" class="nav-link active" aria-current="page">AirClean UltraFine</a></li>
+<li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-31 current-menu-item current_page_item"><a href="airclean-ultrafine/index.html" class="nav-link active nav-link-ultrafine" aria-current="page"><span class="nav-link-ultrafine-title">AirClean UltraFine</span><span class="nav-link-ultrafine-subtitle">voor professioneel gebruik</span></a></li>
 <li id="menu-item-321" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-321"><a href="verkooppunten/index.html" class="nav-link">Verkooppunten</a></li>
 <li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-35"><a href="ondersteuning/index.html" class="nav-link">Ondersteuning</a></li>
 <li id="menu-item-39" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-39"><a href="nieuws/index.html" class="nav-link">Nieuws</a></li>
@@ -183,7 +183,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 		<ul id="menu-hoofdmenu-1" class="navbar-mobile"><li class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-home nav-item-32"><a href="index.html" class="nav-link">Home</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-33"><a href="e-filters/index.html" class="nav-link">E-Filters</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-34"><a href="air-cleaners/index.html" class="nav-link">Air Cleaners</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-31 current-menu-item current_page_item"><a href="airclean-ultrafine/index.html" class="nav-link active" aria-current="page">AirClean UltraFine</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-31 current-menu-item current_page_item"><a href="airclean-ultrafine/index.html" class="nav-link active nav-link-ultrafine" aria-current="page"><span class="nav-link-ultrafine-title">AirClean UltraFine</span><span class="nav-link-ultrafine-subtitle">voor professioneel gebruik</span></a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-321"><a href="verkooppunten/index.html" class="nav-link">Verkooppunten</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-35"><a href="ondersteuning/index.html" class="nav-link">Ondersteuning</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-39"><a href="nieuws/index.html" class="nav-link">Nieuws</a></li>
@@ -338,23 +338,28 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     }
     .ultrafine-brochure-title {
       max-width: none;
-      margin: 0 0 .85rem;
+      margin: 0 0 .9rem;
       color: #03283d;
       font-size: clamp(3.7rem, 5vw, 5.35rem) !important;
-      line-height: .92 !important;
-      letter-spacing: -.055em;
+      line-height: .98 !important;
+      letter-spacing: -.04em;
       font-weight: 700 !important;
-    }
-    .ultrafine-brochure-title span {
-      display: block;
-      white-space: nowrap;
     }
     .ultrafine-brochure-subtitle {
       margin: 0;
       color: var(--bs-primary);
-      font-size: clamp(1.55rem, 1.85vw, 2.05rem);
-      line-height: 1.1;
-      font-weight: 400;
+      font-size: clamp(1rem, 1.15vw, 1.16rem);
+      line-height: 1.25;
+      font-weight: 700;
+    }
+    @media (min-width: 992px) {
+      .ultrafine-brochure-heading {
+        max-width: 42rem;
+      }
+      .ultrafine-brochure-title {
+        white-space: nowrap;
+        font-size: clamp(3rem, 4.2vw, 4.6rem) !important;
+      }
     }
     .ultrafine-brochure-meta {
       max-width: 32rem;
@@ -581,10 +586,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     .ultrafine-stat strong,
     .ultrafine-metric strong {
       display: block;
-      color: var(--header-color);
       line-height: 1.1;
     }
     .ultrafine-stat strong {
+      color: var(--bs-primary);
       font-size: 1.75rem;
       margin-bottom: .5rem;
     }
@@ -595,6 +600,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       border: 1px solid var(--bs-primary-border-subtle);
     }
     .ultrafine-metric strong {
+      color: var(--header-color);
       font-size: 1.35rem;
       margin-bottom: .25rem;
     }
@@ -1135,8 +1141,6 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       pointer-events: none;
     }
     .ultrafine-product-main img {
-      position: relative;
-      z-index: 1;
       width: 100%;
       max-width: 420px;
       max-height: 380px;
@@ -1714,16 +1718,13 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       }
       .ultrafine-brochure-title {
         max-width: none;
-        margin-bottom: .55rem;
+        margin-bottom: .7rem;
         font-size: clamp(2.45rem, 11vw, 3.45rem) !important;
-        line-height: .95 !important;
-        letter-spacing: -.045em;
-      }
-      .ultrafine-brochure-title span {
-        white-space: normal;
+        line-height: 1 !important;
+        letter-spacing: -.035em;
       }
       .ultrafine-brochure-subtitle {
-        font-size: clamp(1.14rem, 4.8vw, 1.52rem);
+        font-size: clamp(.92rem, 4vw, 1.02rem);
       }
       .ultrafine-brochure-meta {
         max-width: none;
@@ -1790,19 +1791,19 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
             <div class="ultrafine-brochure-grid">
               <div class="ultrafine-brochure-copy">
                 <div class="ultrafine-brochure-heading">
-                  <h1 class="ultrafine-brochure-title"><span>Je lucht was nog</span><span>nooit zo schoon</span></h1>
-                  <p class="ultrafine-brochure-subtitle">AirClean UltraFine-serie</p>
+                  <h1 class="ultrafine-brochure-title">AirClean UltraFine</h1>
+                  <p class="ultrafine-brochure-subtitle">Luchtkwaliteit op het hoogste niveau, binnen jouw organisatie.</p>
                 </div>
 
                 <div class="ultrafine-brochure-meta">
                   <div class="ultrafine-brochure-text">
-                    <p class="ultrafine-brochure-intro">Schoner, gezonder en merkbaar frisser leefcomfort, dag in, dag uit. De AirClean UltraFine-serie combineert <span class="ultrafine-brochure-accent">ESP en ESD</span> voor professionele ruimtes waar schone lucht elke dag telt.</p>
+                    <p class="ultrafine-brochure-intro">Luchtkwaliteit heeft direct invloed op medewerkers, bezoekers en dagelijkse processen. De AirClean UltraFine-serie combineert <span class="ultrafine-brochure-accent">ESP en ESD</span> voor professionele ruimtes waar schone lucht geen bijzaak is.</p>
                     <ul class="ultrafine-brochure-points">
-                      <li><strong>ESP en ESD-technologie</strong> De GUC4184 ESP-filter en GUC1223 E-filter vormen samen een krachtig duo voor fijnstof, geuren, allergenen en micro-organismen.</li>
-                      <li><strong>Lage luchtweerstand</strong> voor een rustige luchtstroom en efficiënt energieverbruik.</li>
-                      <li><strong>Lange levensduur</strong> Constante kwaliteit over circa 10 tot 15 jaar, met een vaatwasserbestendige ESP-plaatmodule.</li>
+                      <li><strong>Professionele inzet</strong> Geschikt voor ruimtes waar luchtkwaliteit elke dag merkbaar, stabiel en beheersbaar moet zijn.</li>
+                      <li><strong>Rustig en effici&euml;nt</strong> Lage luchtweerstand zorgt voor een stillere luchtstroom en een gunstig energieverbruik.</li>
+                      <li><strong>Onderhoudsvriendelijk</strong> Constante kwaliteit over circa 10 tot 15 jaar, met een vaatwasserbestendige ESP-plaatmodule.</li>
                     </ul>
-                    <p class="ultrafine-brochure-closing">Het resultaat: schoner, gezonder en merkbaar frisser leefcomfort, dag in, dag uit.</p>
+                    <p class="ultrafine-brochure-closing">Zo wordt luchtkwaliteit binnen je organisatie overzichtelijk, beheersbaar en professioneel geregeld.</p>
                   </div>
                 </div>
               </div>
@@ -1847,7 +1848,6 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       <section class="vc_section container pb-5">
         <div class="row justify-content-center text-center mb-4">
           <div class="col-lg-8">
-            <p class="small text-uppercase text-primary fw-700 mb-2">Rekent af met</p>
             <h2>AirClean UltraFine rekent af met:</h2>
           </div>
         </div>
@@ -1878,7 +1878,6 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       <section class="vc_section container py-5">
         <div class="row justify-content-center text-center mb-4 mb-lg-5">
           <div class="col-lg-8">
-            <p class="small text-uppercase text-primary fw-700 mb-2">Toepassingen</p>
             <h2>Bewezen in professionele omgevingen</h2>
             <p class="mb-0">De AirClean UltraFine heeft zich inmiddels bewezen in kantoren, winkels, horeca, sportlocaties, zorgomgevingen en klaslokalen waar luchtkwaliteit direct merkbaar is.</p>
           </div>
@@ -1981,7 +1980,6 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       <section class="vc_section container py-5" id="airclean-ultrafine-specificaties">
         <div class="row g-4 g-lg-5 align-items-start">
           <div class="col-lg-6">
-            <p class="small text-uppercase text-primary fw-700 mb-2">Techniek en specificaties</p>
             <h2>Gebouwd voor constante kwaliteit en lage luchtweerstand</h2>
             <p class="mb-4">In tegenstelling tot conventionele filtersystemen kent de ESP geen dichte vezelstructuur die de luchtstroom belemmert. Daardoor ontstaat er geen tot weinig luchtweerstand, met lager energieverbruik, minder geluid en minder vervanging en afval.</p>
 
@@ -2018,7 +2016,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                   <li>Minder energieverlies omdat ventilatoren minder tegendruk hoeven te overwinnen.</li>
                   <li>Minder geluid dankzij een vrijere luchtstroom en rustiger recirculatiegedrag.</li>
                       <li>Onderhoudsvriendelijk door vaatwasbestendige ESP-platen en minder vervangingsmateriaal.</li>
-                  <li>Beschikbaar als plafondmodel met uitbreidbare buitenluchttoevoer.</li>
+                  <li>Flexibel toepasbaar in verschillende opstellingen, met optionele uitbreiding voor extra buitenluchttoevoer.</li>
                 </ul>
               </div>
             </div>
@@ -2069,7 +2067,6 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         <div class="ultrafine-proof-wrap p-4 p-lg-5">
           <div class="row justify-content-center text-center mb-4 mb-lg-5">
             <div class="col-lg-9">
-              <p class="small text-uppercase fw-700 mb-2">Validatie en techniek</p>
               <h2>Onderbouwd met metingen, onderzoek en cleanroom-principes</h2>
               <p class="mb-0">Meetrapporten en onderzoek laten zien hoe UltraFine is opgebouwd voor projecten waarin luchtkwaliteit aantoonbaar en technisch onderbouwd moet zijn.</p>
             </div>
@@ -2102,7 +2099,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                   <img src="wp-content/uploads/airclean-ultrafine/hybfree.png" alt="Extra toevoer van buitenlucht" loading="lazy">
                 </div>
                 <h3 class="h5">Hybride buitenluchttoevoer</h3>
-                <p>Voor het plafondmodel is een optionele uitbreiding met extra buitenluchttoevoer beschikbaar, waardoor recirculeren en ventileren samenkomen in &eacute;&eacute;n ge&iuml;ntegreerd systeem.</p>
+                <p>Optioneel is een uitbreiding met extra buitenluchttoevoer beschikbaar, waardoor recirculeren en ventileren samenkomen in &eacute;&eacute;n ge&iuml;ntegreerd systeem dat per situatie kan worden afgestemd.</p>
                 <a href="extra-toevoer.html" title="Meer informatie over extra toevoer" class="btn btn-primary">Meer over extra toevoer</a>
               </div>
             </div>
@@ -2113,9 +2110,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       <section class="vc_section container py-5" id="airclean-ultrafine-duurzaamheid">
         <div class="row justify-content-center text-center mb-4 mb-lg-5">
           <div class="col-lg-8 ultrafine-sustain-intro">
-            <p class="small text-uppercase fw-700 mb-2">Testlab en duurzaamheid</p>
             <h2>Onderbouwd in het testlab en ontworpen voor lange inzet</h2>
-            <p class="mb-0">PlasmaMade koppelt kwaliteitscontrole en testrapporten aan een filtertechniek met lange levensduur en een hoog aandeel recyclebare materialen. Daarmee sluit deze sectie beter aan op de bestaande PlasmaMade-opbouw van heldere informatiewaarden en directe doorkliks.</p>
+            <p class="mb-0">PlasmaMade koppelt kwaliteitscontrole en testrapporten aan een filtertechniek met lange levensduur en een hoog aandeel recyclebare materialen.</p>
           </div>
         </div>
 
@@ -2201,10 +2197,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <div class="ultrafine-product-top">
                   <div class="ultrafine-product-head">
                     <div class="ultrafine-product-title-wrap">
-                      <h3 class="ultrafine-product-title">AirClean UltraFine<span>Plafondluchtreiniging voor ruimtes waar stabiele luchtkwaliteit, rustige werking en compacte integratie belangrijk zijn.</span></h3>
+                      <h3 class="ultrafine-product-title">AirClean UltraFine<span>Luchtreiniging voor kantoren, zorg, onderwijs, horeca en retail waar stabiele luchtkwaliteit onderdeel is van de dagelijkse kwaliteit.</span></h3>
                     </div>
                   </div>
-                  <p class="ultrafine-product-summary">De GUC4184 ESP-filter en de GUC1223 E-filter met ESD-technologie vormen samen een krachtig duo dat fijnstof, geuren, allergenen en micro-organismen verwijdert.</p>
+                  <p class="ultrafine-product-summary">Voor bedrijven die luchtkwaliteit professioneel willen aanpakken, vormen de GUC4184 ESP-filter en de GUC1223 E-filter met ESD-technologie samen een krachtig duo tegen fijnstof, geuren, allergenen en micro-organismen.</p>
                 </div>
                 <div class="ultrafine-product-meta-grid" aria-label="Kerngegevens van AirClean UltraFine">
                   <div class="ultrafine-product-meta">
@@ -2225,16 +2221,16 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                   <div class="ultrafine-product-meta">
                     <strong>Afmetingen</strong>
                     <span>30 x 35 x 100 cm</span>
-                    <small>Compact formaat voor integratie in plafondtoepassingen.</small>
+                    <small>Compact formaat voor flexibele integratie, afhankelijk van ruimte en opstelling.</small>
                   </div>
                 </div>
                 <div class="ultrafine-product-detail-grid">
                   <div class="ultrafine-product-detail-card">
                     <p class="ultrafine-product-section-title">Waarom dit product</p>
                     <ul class="ultrafine-product-points">
-                      <li>Schoner, gezonder en merkbaar frisser leefcomfort, dag in, dag uit.</li>
+                      <li>Duidelijke verbetering van luchtkwaliteit voor medewerkers, bezoekers en gebruikers van de ruimte.</li>
                       <li>Geen tot weinig luchtweerstand dankzij de ESP zonder dichte vezelstructuur.</li>
-                      <li>Constante kwaliteit over circa 10 tot 15 jaar met een vaatwasserbestendige ESP-plaatmodule.</li>
+                      <li>Constante kwaliteit over circa 10 tot 15 jaar met onderhoudsvriendelijke, vaatwasserbestendige ESP-platen.</li>
                     </ul>
                   </div>
                   <div class="ultrafine-product-detail-card">
@@ -2269,7 +2265,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                   <a href="wp-content/uploads/airclean-ultrafine/PLASMA-5060%20Fldr-Ultrafine-EU-NL-A4-Df%20(1).pdf" title="Download de productsheet van AirClean UltraFine" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer" download>Download productsheet</a>
                   <a href="wp-content/uploads/airclean-ultrafine/PLASMA-5060%20Fldr-Ultrafine-EU-NL-A4-Df%20(1).pdf" title="Download de documentatie van AirClean UltraFine" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">Download documentatie</a>
                 </div>
-                <p class="ultrafine-product-note">Geschikt voor ruimtes vanaf 20 m&sup2; tot 150 m&sup2;; in grotere ruimtes kunnen meerdere AirCleaners per ruimte worden geplaatst.</p>
+                <p class="ultrafine-product-note">Geschikt voor zakelijke ruimtes vanaf 20 m&sup2; tot 150 m&sup2;; in grotere ruimtes kunnen meerdere AirCleaners per ruimte worden geplaatst.</p>
               </div>
             </article>
           </div>
@@ -2556,6 +2552,7 @@ var gdpr_consent__cookies = "strict"
 			galleries.forEach(function (gallery) {
 				var mainImage = gallery.querySelector('[data-gallery-main-image]');
 				var caption = gallery.querySelector('[data-gallery-caption]');
+				var mainFigure = gallery.querySelector('.ultrafine-product-main');
 				var thumbs = Array.prototype.slice.call(gallery.querySelectorAll('[data-gallery-thumb]'));
 
 				function setActive(button) {
@@ -2572,11 +2569,16 @@ var gdpr_consent__cookies = "strict"
 					var imageSrc = button.getAttribute('data-image');
 					var imageAlt = button.getAttribute('data-alt') || '';
 					var imageCaption = button.getAttribute('data-caption') || '';
+					var showLogo = button.getAttribute('data-gallery-logo') === 'true';
 
 					if (imageSrc) {
 						mainImage.src = imageSrc;
 					}
 					mainImage.alt = imageAlt;
+
+					if (mainFigure) {
+						mainFigure.classList.toggle('has-unit-logo', showLogo);
+					}
 
 					if (caption) {
 						caption.textContent = imageCaption;
