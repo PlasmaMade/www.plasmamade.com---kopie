@@ -260,7 +260,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       position: absolute;
       left: 0;
       right: 0;
-      top: 52%;
+      top: clamp(22.75rem, 58vh, 29rem);
       bottom: 0;
       background:
         linear-gradient(
@@ -281,7 +281,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       position: absolute;
       left: 0;
       right: 0;
-      top: 52%;
+      top: clamp(22.75rem, 58vh, 29rem);
       bottom: 0;
       background:
         radial-gradient(circle at 12% 16%, rgba(255,255,255,.12) 0%, rgba(255,255,255,.06) 18%, rgba(255,255,255,0) 36%),
@@ -354,11 +354,18 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     }
     @media (min-width: 992px) {
       .ultrafine-brochure-heading {
-        max-width: 42rem;
+        max-width: none;
       }
       .ultrafine-brochure-title {
         white-space: nowrap;
         font-size: clamp(3rem, 4.2vw, 4.6rem) !important;
+      }
+      .ultrafine-brochure-subtitle {
+        display: inline-block;
+        width: max-content;
+        max-width: none;
+        white-space: nowrap;
+        font-size: clamp(1rem, 1.15vw, 1.16rem);
       }
     }
     .ultrafine-brochure-meta {
@@ -1797,13 +1804,14 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
                 <div class="ultrafine-brochure-meta">
                   <div class="ultrafine-brochure-text">
-                    <p class="ultrafine-brochure-intro">Luchtkwaliteit heeft direct invloed op medewerkers, bezoekers en dagelijkse processen. De AirClean UltraFine-serie combineert <span class="ultrafine-brochure-accent">ESP en ESD</span> voor professionele ruimtes waar schone lucht geen bijzaak is.</p>
+                    <p class="ultrafine-brochure-intro">AirClean UltraFine combineert <span class="ultrafine-brochure-accent">ESP en ESD</span> voor professionele ruimtes waar schone lucht direct merkbaar moet zijn.</p>
                     <ul class="ultrafine-brochure-points">
-                      <li><strong>Professionele inzet</strong> Geschikt voor ruimtes waar luchtkwaliteit elke dag merkbaar, stabiel en beheersbaar moet zijn.</li>
-                      <li><strong>Rustig en effici&euml;nt</strong> Lage luchtweerstand zorgt voor een stillere luchtstroom en een gunstig energieverbruik.</li>
-                      <li><strong>Onderhoudsvriendelijk</strong> Constante kwaliteit over circa 10 tot 15 jaar, met een vaatwasserbestendige ESP-plaatmodule.</li>
+                      <li><strong>Elimineert vervuiling</strong> Pakt fijnstof, rookdeeltjes, geuren en VOS actief aan.</li>
+                      <li><strong>Filtert tot 98%</strong> Verwijdert allergenen en filtert virussen, bacteri&euml;n en aerosolen tot 98%.</li>
+                      <li><strong>Stil en effici&euml;nt</strong> Geen tot weinig luchtweerstand zorgt voor minder geluid en lager energieverbruik.</li>
+                      <li><strong>Duurzaam inzetbaar</strong> Vaatwasserbestendige ESP-platen ondersteunen constante kwaliteit over circa 10 tot 15 jaar.</li>
                     </ul>
-                    <p class="ultrafine-brochure-closing">Zo wordt luchtkwaliteit binnen je organisatie overzichtelijk, beheersbaar en professioneel geregeld.</p>
+                    <p class="ultrafine-brochure-closing">Voor organisaties die schone lucht professioneel willen regelen.</p>
                   </div>
                 </div>
               </div>
