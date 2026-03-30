@@ -370,6 +370,43 @@ KvK: 60745304</p>
 </p><div class="wpcf7-response-output" aria-hidden="true"></div>
 </form>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	var subjectField = document.querySelector('#your-onderwerp');
+	var messageField = document.querySelector('#your-message');
+
+	if (!subjectField) {
+		return;
+	}
+
+	var params = new URLSearchParams(window.location.search);
+	var requestedSubject = params.get('onderwerp') || params.get('subject');
+	var requestedContext = params.get('context');
+
+	if (!requestedSubject) {
+		requestedSubject = '';
+	}
+
+	requestedSubject = requestedSubject.trim();
+	requestedContext = requestedContext ? requestedContext.trim() : '';
+
+	if (requestedSubject) {
+		for (var i = 0; i < subjectField.options.length; i++) {
+			var option = subjectField.options[i];
+
+			if (option.value.toLowerCase() === requestedSubject.toLowerCase()) {
+				subjectField.value = option.value;
+				subjectField.dispatchEvent(new Event('change', { bubbles: true }));
+				break;
+			}
+		}
+	}
+
+	if (requestedContext && messageField && !messageField.value.trim()) {
+		messageField.value = 'Onderwerp: ' + requestedContext + '\n\n';
+	}
+});
+</script>
 </div></div></div></div><div class="row"><div class="col-md-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="spacer spacer-69aebe7dd9bd6" data-id="69aebe7dd9bd6" style="clear:both;display:block;height:60px;"></div></div></div></div></div></section>
 			</div><!-- .entry-content -->
 </article><!-- #post-20 -->
