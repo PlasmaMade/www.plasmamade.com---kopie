@@ -348,7 +348,7 @@ KvK: 60745304</p>
 		</p>
 	</div>
 	<div class="col-12 col-lg-6">
-		<p><label class="sr-only visually-hidden" for="your-onderwerp">Onderwerp*</label><span class="wpcf7-form-control-wrap" data-name="onderwerp"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-select" id="your-onderwerp" aria-required="true" aria-invalid="false" name="onderwerp"><option value="">Maak je keuze</option><option value="Bestellingen en leveringen">Bestellingen en leveringen</option><option value="Service en garantie">Service en garantie</option><option value="Verkoop">Verkoop</option><option value="Marketing">Marketing</option><option value="Product trainingen">Product trainingen</option><option value="Overig">Overig</option></select></span>
+		<p><label class="sr-only visually-hidden" for="your-onderwerp">Onderwerp*</label><span class="wpcf7-form-control-wrap" data-name="onderwerp"><select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-select" id="your-onderwerp" aria-required="true" aria-invalid="false" name="onderwerp"><option value="">Maak je keuze</option><option value="Bestellingen en leveringen">Bestellingen en leveringen</option><option value="Service en garantie">Service en garantie</option><option value="Verkoop">Verkoop</option><option value="Advies aanvragen">Advies aanvragen</option><option value="Project bespreken">Project bespreken</option><option value="AirClean UltraFine">AirClean UltraFine</option><option value="Air Cleaner">Air Cleaner</option><option value="Offerte Air Cleaner">Offerte Air Cleaner</option><option value="Marketing">Marketing</option><option value="Product trainingen">Product trainingen</option><option value="Overig">Overig</option></select></span>
 		</p>
 	</div>
 	<div class="col-12 col-lg-12">
@@ -370,43 +370,6 @@ KvK: 60745304</p>
 </p><div class="wpcf7-response-output" aria-hidden="true"></div>
 </form>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-	var subjectField = document.querySelector('#your-onderwerp');
-	var messageField = document.querySelector('#your-message');
-
-	if (!subjectField) {
-		return;
-	}
-
-	var params = new URLSearchParams(window.location.search);
-	var requestedSubject = params.get('onderwerp') || params.get('subject');
-	var requestedContext = params.get('context');
-
-	if (!requestedSubject) {
-		requestedSubject = '';
-	}
-
-	requestedSubject = requestedSubject.trim();
-	requestedContext = requestedContext ? requestedContext.trim() : '';
-
-	if (requestedSubject) {
-		for (var i = 0; i < subjectField.options.length; i++) {
-			var option = subjectField.options[i];
-
-			if (option.value.toLowerCase() === requestedSubject.toLowerCase()) {
-				subjectField.value = option.value;
-				subjectField.dispatchEvent(new Event('change', { bubbles: true }));
-				break;
-			}
-		}
-	}
-
-	if (requestedContext && messageField && !messageField.value.trim()) {
-		messageField.value = 'Onderwerp: ' + requestedContext + '\n\n';
-	}
-});
-</script>
 </div></div></div></div><div class="row"><div class="col-md-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="spacer spacer-69aebe7dd9bd6" data-id="69aebe7dd9bd6" style="clear:both;display:block;height:60px;"></div></div></div></div></div></section>
 			</div><!-- .entry-content -->
 </article><!-- #post-20 -->
