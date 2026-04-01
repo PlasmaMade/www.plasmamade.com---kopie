@@ -2469,8 +2469,50 @@ var gdpr_consent__cookies = "strict"
 			var issueDescription = issuesRoot.querySelector('[data-issue-description]');
 			var hoverEnabled = window.matchMedia('(hover: hover)').matches;
 			var lockedButton = null;
+			var autoRotateDelay = 2400;
+			var autoResumeDelay = 1200;
+			var autoRotateTimer = null;
+			var autoIndex = 0;
 
-			function renderIssue(button) {
+			function stopAutoRotation() {
+				if (autoRotateTimer) {
+					window.clearTimeout(autoRotateTimer);
+					autoRotateTimer = null;
+				}
+			}
+
+			function syncAutoIndex(button) {
+				var index = issueButtons.indexOf(button);
+				if (index === -1) {
+					return;
+				}
+				autoIndex = (index + 1) % issueButtons.length;
+			}
+
+			function scheduleAutoRotation(delay) {
+				stopAutoRotation();
+
+				if (!issueButtons.length || lockedButton) {
+					return;
+				}
+
+				autoRotateTimer = window.setTimeout(function rotateIssues() {
+					if (lockedButton || issuesRoot.contains(document.activeElement) || (hoverEnabled && issuesRoot.matches(':hover'))) {
+						autoRotateTimer = null;
+						return;
+					}
+
+					var nextButton = issueButtons[autoIndex];
+					renderIssue(nextButton, { fromAuto: true });
+					syncAutoIndex(nextButton);
+
+					autoRotateTimer = window.setTimeout(rotateIssues, autoRotateDelay);
+				}, delay);
+			}
+
+			function renderIssue(button, options) {
+				options = options || {};
+
 				issueButtons.forEach(function (item) {
 					var isActive = item === button;
 					item.classList.toggle('is-active', isActive);
@@ -2480,11 +2522,13 @@ var gdpr_consent__cookies = "strict"
 				if (!button) {
 					issuesRoot.classList.remove('is-showing');
 					issuePanel.hidden = true;
+					issuePanel.setAttribute('aria-live', 'off');
 					issueTitle.textContent = '';
 					issueDescription.textContent = '';
 					return;
 				}
 
+				issuePanel.setAttribute('aria-live', options.fromAuto ? 'off' : 'polite');
 				issueTitle.textContent = button.getAttribute('data-issue-title') || '';
 				issueDescription.textContent = button.getAttribute('data-issue-text') || '';
 				issuePanel.hidden = false;
@@ -2496,27 +2540,38 @@ var gdpr_consent__cookies = "strict"
 					if (!hoverEnabled) {
 						return;
 					}
+					stopAutoRotation();
+					lockedButton = null;
 					renderIssue(button);
+					syncAutoIndex(button);
 				});
 
 				button.addEventListener('focus', function () {
+					stopAutoRotation();
+					lockedButton = null;
 					renderIssue(button);
+					syncAutoIndex(button);
 				});
 
 				button.addEventListener('click', function () {
 					if (hoverEnabled) {
+						stopAutoRotation();
+						lockedButton = null;
 						renderIssue(button);
+						syncAutoIndex(button);
 						return;
 					}
 
 					if (lockedButton === button) {
 						lockedButton = null;
-						renderIssue(null);
+						scheduleAutoRotation(autoResumeDelay);
 						return;
 					}
 
 					lockedButton = button;
+					stopAutoRotation();
 					renderIssue(button);
+					syncAutoIndex(button);
 				});
 			});
 
@@ -2525,7 +2580,7 @@ var gdpr_consent__cookies = "strict"
 					if (issuesRoot.contains(document.activeElement)) {
 						return;
 					}
-					renderIssue(null);
+					scheduleAutoRotation(autoResumeDelay);
 				});
 			} else {
 				document.addEventListener('click', function (event) {
@@ -2533,7 +2588,7 @@ var gdpr_consent__cookies = "strict"
 						return;
 					}
 					lockedButton = null;
-					renderIssue(null);
+					scheduleAutoRotation(autoResumeDelay);
 				});
 			}
 
@@ -2545,9 +2600,15 @@ var gdpr_consent__cookies = "strict"
 					if (hoverEnabled && issuesRoot.matches(':hover')) {
 						return;
 					}
-					renderIssue(null);
+					scheduleAutoRotation(autoResumeDelay);
 				}, 0);
 			});
+
+			if (issueButtons.length) {
+				renderIssue(issueButtons[0], { fromAuto: true });
+				syncAutoIndex(issueButtons[0]);
+				scheduleAutoRotation(autoRotateDelay);
+			}
 		})();
 	</script>
 	<script>
