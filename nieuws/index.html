@@ -2261,6 +2261,487 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       align-items: flex-start;
     }
   }
+
+  .news-slider::before {
+    display: none;
+    content: none;
+  }
+
+  .news-slider {
+    display: block;
+  }
+
+  .news-source-strip {
+    display: none;
+  }
+
+  .news-hero {
+    padding: 28px 0 22px;
+  }
+
+  .news-hero__layout {
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr);
+    gap: 28px;
+    max-width: 1120px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .news-hero__panel,
+  .news-hero__aside {
+    display: block;
+    padding: 30px 32px;
+    border: 1px solid rgba(14, 30, 46, 0.1);
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 14px 36px rgba(14, 30, 46, 0.05);
+  }
+
+  .news-hero__panel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .news-hero__panel::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 6px;
+    background: #1f5f95;
+  }
+
+  .news-hero__eyebrow {
+    margin-bottom: 10px;
+    color: #1f5f95;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .news-page-title {
+    margin-bottom: 12px;
+    font-size: clamp(2.8rem, 4vw, 4.3rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: #10263d;
+  }
+
+  .news-page-intro {
+    max-width: 42ch;
+    margin-bottom: 18px;
+    color: #4c5f71;
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
+
+  .news-hero__topics {
+    margin: 0 0 24px;
+  }
+
+  .news-filter-chip {
+    border-color: rgba(16, 38, 61, 0.12);
+    background: #f5f7fa;
+    color: #17324f;
+  }
+
+  .news-filter-chip.is-active {
+    background: #17324f;
+    border-color: #17324f;
+    color: #ffffff;
+  }
+
+  .news-masthead__meta {
+    margin-bottom: 14px;
+    color: #687989;
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+
+  .news-masthead__feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
+    gap: 24px;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .news-masthead__feature:hover .news-masthead__cta,
+  .news-masthead__feature:focus-visible .news-masthead__cta {
+    text-decoration: underline;
+  }
+
+  .news-masthead__label {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #1f5f95;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .news-masthead__title {
+    margin: 0 0 12px;
+    color: #10263d;
+    font-size: clamp(1.9rem, 3vw, 2.7rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+  }
+
+  .news-masthead__text {
+    margin: 0 0 14px;
+    color: #4c5f71;
+    line-height: 1.7;
+  }
+
+  .news-masthead__cta {
+    color: #1f5f95;
+    font-weight: 700;
+  }
+
+  .news-masthead__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+
+  .news-rail__title {
+    margin: 0 0 18px;
+    color: #10263d;
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+
+  .news-rail__list {
+    display: grid;
+    gap: 16px;
+  }
+
+  .news-rail__item {
+    display: block;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(16, 38, 61, 0.1);
+    text-decoration: none;
+  }
+
+  .news-rail__item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .news-rail__meta {
+    display: block;
+    margin-bottom: 6px;
+    color: #687989;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .news-rail__headline {
+    display: block;
+    color: #10263d;
+    font-size: 1rem;
+    line-height: 1.45;
+    font-weight: 700;
+  }
+
+  .news-rail__item:hover .news-rail__headline,
+  .news-rail__item:focus-visible .news-rail__headline {
+    color: #1f5f95;
+  }
+
+  .news-toolbar {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+    gap: 20px;
+    align-items: end;
+    padding: 0 0 14px;
+    margin-bottom: 8px;
+    border: 0;
+    border-bottom: 2px solid rgba(16, 38, 61, 0.08);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .news-toolbar__title {
+    margin-bottom: 0;
+    color: #10263d;
+    font-size: 1.75rem;
+    font-weight: 800;
+  }
+
+  .news-toolbar__text {
+    display: none;
+  }
+
+  .news-search__field {
+    border-radius: 12px;
+    background: #ffffff;
+    border-color: rgba(16, 38, 61, 0.12);
+  }
+
+  .news-search__input {
+    min-height: 48px;
+    box-shadow: none;
+  }
+
+  .news-search__count {
+    min-height: auto;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #687989;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .news-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .news-card[data-featured="true"] {
+    display: none;
+  }
+
+  .news-card {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(16, 38, 61, 0.1);
+  }
+
+  .news-card:last-child {
+    border-bottom: 0;
+  }
+
+  .news-card__shell,
+  .news-card:first-child .news-card__shell {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .news-card:hover .news-card__shell,
+  .news-card:focus-within .news-card__shell {
+    border: 0;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .news-card__media,
+  .news-card:first-child .news-card__media {
+    min-height: auto;
+  }
+
+  .news-card__image,
+  .news-card:first-child .news-card__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .news-card__eyebrow,
+  .news-card__caption,
+  .news-card__excerpt,
+  .news-card__source {
+    display: none;
+  }
+
+  .news-card__body,
+  .news-card:first-child .news-card__body {
+    gap: 8px;
+    padding: 0;
+  }
+
+  .news-card__meta {
+    gap: 10px;
+    color: #687989;
+    font-size: 0.86rem;
+  }
+
+  .news-card__badge {
+    min-height: auto;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--news-accent);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  .news-card__title,
+  .news-card:first-child .news-card__title {
+    margin: 0;
+    color: #10263d;
+    font-size: clamp(1.35rem, 2vw, 1.8rem);
+    line-height: 1.15;
+  }
+
+  .news-card__lead,
+  .news-card:first-child .news-card__lead {
+    display: block;
+    margin: 0;
+    color: #4c5f71;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.65;
+  }
+
+  .news-card__footer {
+    margin-top: 2px;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .news-card__cta {
+    min-height: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #1f5f95;
+    font-weight: 700;
+  }
+
+  .news-card__cta:hover,
+  .news-card__cta:focus {
+    background: transparent;
+    color: #1f5f95;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 991px) {
+    .news-hero__layout {
+      grid-template-columns: 1fr;
+    }
+
+    .news-masthead__feature {
+      grid-template-columns: 1fr;
+    }
+
+    .news-toolbar {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .news-hero__panel,
+    .news-hero__aside {
+      padding: 22px 18px;
+      border-radius: 16px;
+    }
+
+    .news-card__shell,
+    .news-card:first-child .news-card__shell {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .news-card__image,
+    .news-card:first-child .news-card__image {
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  .news-hero {
+    display: none;
+  }
+
+  .news-toolbar {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    max-width: none;
+    margin: 18px 0 18px;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .news-toolbar__title {
+    margin: 0;
+    font-size: clamp(2.6rem, 4vw, 3.4rem);
+    color: #2f9a44;
+    line-height: 1;
+    font-weight: 800;
+  }
+
+  .main-content .news-toolbar__title,
+  .main-content p.news-toolbar__title {
+    margin: 0 !important;
+    color: #2f9a44 !important;
+    font-size: clamp(2.6rem, 4vw, 3.4rem) !important;
+    line-height: 1 !important;
+    font-weight: 800 !important;
+  }
+
+  .news-search {
+    width: 100%;
+    max-width: none;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .news-search__label {
+    display: none;
+  }
+
+  .news-search__field {
+    width: 100%;
+    max-width: 560px;
+    padding: 0 !important;
+    border: 1px solid rgba(20, 50, 40, 0.12) !important;
+    border-radius: 12px !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+  }
+
+  .news-search__input {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 16px;
+    border-radius: 12px;
+    font-size: 1rem;
+    background: #ffffff;
+    box-shadow: none !important;
+  }
+
+  .news-search__count {
+    margin-top: 2px;
+    color: #6c7d72;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  @media (max-width: 767px) {
+    .news-toolbar {
+      margin: 16px 0 14px;
+    }
+
+    .news-search__field {
+      max-width: none;
+    }
+  }
+
+  .news-card[data-featured="true"] {
+    display: block;
+  }
 </style>
 
 <section class="news-slider" aria-label="In het nieuws">
@@ -2346,7 +2827,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         <div class="news-hero__panel">
           <span class="news-hero__eyebrow">PlasmaMade newsroom</span>
           <h1 class="news-page-title">Nieuws</h1>
-          <p class="news-page-intro">Recente publicaties, partnerupdates en eigen berichten van PlasmaMade, geordend voor snelle scan en directe doorklik naar het volledige verhaal of de oorspronkelijke bron.</p>
+          <p class="news-page-intro">Een helder overzicht van nieuws, publicaties en events rond PlasmaMade.</p>
           <div class="news-hero__topics" aria-label="Snelfilters">
             <button type="button" class="news-filter-chip is-active" data-filter="all" aria-pressed="true">Alles</button>
             <button type="button" class="news-filter-chip" data-filter="eigen" aria-pressed="false">Eigen nieuws</button>
@@ -2355,41 +2836,36 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
             <button type="button" class="news-filter-chip" data-filter="events" aria-pressed="false">Events &amp; beurzen</button>
             <button type="button" class="news-filter-chip" data-filter="innovatie" aria-pressed="false">Innovatie</button>
           </div>
-          <p class="news-hero__subnote">Filter op onderwerp of zoek direct op titel, datum, bron en thema.</p>
-          <div class="news-hero__actions">
-            <a class="btn btn-primary news-hero__button" href="teamnl-olympische-winterspelen-2026/index.html">Lees uitgelicht verhaal</a>
-            <a class="btn btn-outline-primary news-hero__button" href="#newsOverview">Bekijk alle berichten</a>
-          </div>
-        </div>
-        <aside class="news-hero__aside" aria-label="Redactioneel overzicht">
-          <a class="news-hero__feature" href="teamnl-olympische-winterspelen-2026/index.html">
-            <div class="news-hero__feature-media">
-              <img class="news-hero__feature-image" src="teamnl-olympische-winterspelen-2026-hero.jpg" alt="TeamNL verhaal op de PlasmaMade newsroom" loading="lazy">
+          <div class="news-masthead__meta">Bijgewerkt op 7 april 2026</div>
+          <a class="news-masthead__feature" href="teamnl-olympische-winterspelen-2026/index.html">
+            <div class="news-masthead__copy">
+              <span class="news-masthead__label">Hoofdverhaal</span>
+              <h2 class="news-masthead__title">Achter de schermen bij TeamNL tijdens Milano-Cortina 2026</h2>
+              <p class="news-masthead__text">PlasmaMade Air Cleaners draaiden tijdens de Winterspelen dag en nacht in de TeamNL-verblijfsruimtes en slaapkamers.</p>
+              <span class="news-masthead__cta">Lees hoofdverhaal</span>
             </div>
-            <div class="news-hero__feature-body">
-              <span class="news-hero__feature-label">Nieuwste verhaal</span>
-              <h2 class="news-hero__feature-title">Achter de schermen bij TeamNL tijdens Milano-Cortina 2026</h2>
-              <p class="news-hero__feature-text">Lees hoe PlasmaMade Air Cleaners dag en nacht werden ingezet in de TeamNL-verblijfsruimtes tijdens de Olympische Winterspelen.</p>
-              <span class="news-hero__feature-link">Open artikel</span>
-            </div>
+            <img class="news-masthead__image" src="teamnl-room-wide.jpg" alt="TeamNL tijdens Milano-Cortina 2026" loading="lazy">
           </a>
-          <div class="news-hero__stats">
-            <div class="news-hero__stat">
-              <span class="news-hero__stat-label">Laatste update</span>
-              <strong class="news-hero__stat-value">27 maart 2026</strong>
-            </div>
-            <div class="news-hero__stat">
-              <span class="news-hero__stat-label">Focus</span>
-              <strong class="news-hero__stat-value">Nieuws, events en partnerships</strong>
-            </div>
-            <div class="news-hero__stat">
-              <span class="news-hero__stat-label">Regio's</span>
-              <strong class="news-hero__stat-value">Nederland, Europa en Noord-Amerika</strong>
-            </div>
-            <div class="news-hero__stat">
-              <span class="news-hero__stat-label">Gebruik</span>
-              <strong class="news-hero__stat-value">Snel scanbaar en direct doorzoekbaar</strong>
-            </div>
+        </div>
+        <aside class="news-hero__aside" aria-label="Recente koppen">
+          <h2 class="news-rail__title">Recente koppen</h2>
+          <div class="news-rail__list">
+            <a class="news-rail__item" href="https://kb.nkba.org/chapters/mid-atlantic/events/" target="_blank" rel="noopener noreferrer">
+              <span class="news-rail__meta">12 maart 2026 • NKBA</span>
+              <span class="news-rail__headline">NKBA Mid Atlantic zet PlasmaMade opnieuw op live agenda</span>
+            </a>
+            <a class="news-rail__item" href="https://www.buildersshow.com/Search/Exhibitor.aspx?id=206228&amp;year=2026" target="_blank" rel="noopener noreferrer">
+              <span class="news-rail__meta">17 februari 2026 • IBS 2026</span>
+              <span class="news-rail__headline">PlasmaMade opgenomen in IBS 2026 exposantenprofiel</span>
+            </a>
+            <a class="news-rail__item" href="https://www.vsk.nl/artikelen/nieuwe-filter-maakt-van-elke-wtw-installatie-een-fijnstofvreter" target="_blank" rel="noopener noreferrer">
+              <span class="news-rail__meta">29 januari 2026 • VSK</span>
+              <span class="news-rail__headline">PlasmaMade-techniek gekoppeld aan fijnstof in WTW-installaties</span>
+            </a>
+            <a class="news-rail__item" href="https://www.e-digitaleditions.com/i/1540965/14" target="_blank" rel="noopener noreferrer">
+              <span class="news-rail__meta">November 2025 • Retail Observer</span>
+              <span class="news-rail__headline">U.S. distributie uitgebreid via exclusieve Almo-overeenkomst</span>
+            </a>
           </div>
         </aside>
       </div>
@@ -2402,20 +2878,20 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     <div class="col-12 col-lg-10 mx-auto">
       <div class="news-toolbar" id="newsOverview">
         <div>
-          <p class="news-toolbar__title">Laatste berichten</p>
+          <p class="news-toolbar__title">Nieuws</p>
           <p class="news-toolbar__text">Alle items staan in chronologische volgorde en zijn compact opgezet voor snelle oriëntatie. Gebruik de filters of zoek direct op bron, datum en onderwerp.</p>
         </div>
         <div class="news-search">
           <label class="news-search__label" for="newsSearch">Zoek in nieuws</label>
           <div class="news-search__field">
-            <input type="search" id="newsSearch" class="news-search__input" placeholder="Zoek op titel, datum, bron of onderwerp" aria-label="Zoek in nieuwsartikelen" autocomplete="off">
+            <input type="search" id="newsSearch" class="news-search__input" placeholder="Zoek op titel, bron of datum" aria-label="Zoek in nieuwsartikelen" autocomplete="off">
           </div>
           <p id="newsSearchCount" class="news-search__count"></p>
         </div>
       </div>
 
       <div class="news-list">
-        <article class="news-card" data-filters="eigen partners events" style="--news-accent:#1e5ea8; --news-soft:#eef4fb;">
+        <article class="news-card" data-featured="true" data-filters="eigen partners events" style="--news-accent:#1e5ea8; --news-soft:#eef4fb;">
           <div class="news-card__shell">
             <div class="news-card__media">
               <img class="news-card__image" src="teamnl-room-wide.jpg" alt="TeamNL tijdens Milano-Cortina 2026" loading="lazy">
@@ -2431,11 +2907,9 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <time datetime="2026-03-27">27 maart 2026</time>
               </div>
               <h2 class="news-card__title">Achter de schermen bij TeamNL: schone lucht tijdens Milano-Cortina 2026</h2>
-              <p class="news-card__lead">Tijdens de Olympische Winterspelen draaiden PlasmaMade Air Cleaners dag en nacht in de TeamNL-verblijfsruimtes en slaapkamers.</p>
-              <p class="news-card__excerpt">Achter de schermen ondersteunde PlasmaMade TeamNL met schone lucht op de momenten waarop herstel, rust en focus samenkomen.</p>
+              <p class="news-card__lead">PlasmaMade Air Cleaners draaiden tijdens de Winterspelen dag en nacht in de TeamNL-verblijfsruimtes.</p>
               <div class="news-card__footer">
-                <a class="news-card__cta" href="teamnl-olympische-winterspelen-2026/index.html">Lees artikel</a>
-                <p class="news-card__source">Een kijkje achter de schermen bij TeamNL tijdens Milano-Cortina 2026.</p>
+                <a class="news-card__cta" href="teamnl-olympische-winterspelen-2026/index.html">Lees meer</a>
               </div>
             </div>
           </div>
@@ -2456,12 +2930,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <span class="news-card__badge">Event</span>
                 <time datetime="2026-03-12">12 maart 2026</time>
               </div>
-              <h2 class="news-card__title">NKBA Mid Atlantic zet PlasmaMade opnieuw op de live agenda</h2>
-              <p class="news-card__lead">De Mid Atlantic Chapter van NKBA kondigde in maart een live sessie aan met Almo Appliances, PlasmaMade en chef Tim Lopez.</p>
-              <p class="news-card__excerpt">In de eventtekst staat de E-Filter centraal als oplossing voor het neutraliseren van geuren, allergenen, rook en vetdeeltjes zonder externe ventilatie. Daarmee verschijnt PlasmaMade opnieuw in een directe vakcommunity-setting voor ontwerpers en keukenprofessionals.</p>
+              <h2 class="news-card__title">NKBA Mid Atlantic zet PlasmaMade opnieuw op live agenda</h2>
+              <p class="news-card__lead">De Mid Atlantic Chapter kondigde een livesessie aan met Almo Appliances, PlasmaMade en chef Tim Lopez.</p>
               <div class="news-card__footer">
-                <a class="news-card__cta" href="https://kb.nkba.org/chapters/mid-atlantic/events/" target="_blank" rel="noopener noreferrer">Lees publicatie</a>
-                <p class="news-card__source">Bron: <a href="https://kb.nkba.org/chapters/mid-atlantic/events/" target="_blank" rel="noopener noreferrer">NKBA Mid Atlantic</a> <span class="news-card__source-domain">kb.nkba.org</span></p>
+                <a class="news-card__cta" href="https://kb.nkba.org/chapters/mid-atlantic/events/" target="_blank" rel="noopener noreferrer">Lees meer</a>
               </div>
             </div>
           </div>
@@ -2482,12 +2954,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <span class="news-card__badge">Beurs</span>
                 <time datetime="2026-02-17">17 februari 2026</time>
               </div>
-              <h2 class="news-card__title">PlasmaMade by JAK Appliance Group opgenomen in het IBS 2026 exposantenprofiel</h2>
-              <p class="news-card__lead">De online exposantenpagina van IBS 2026 zet PlasmaMade by JAK Appliance Group in het New Product Zone-overzicht.</p>
-              <p class="news-card__excerpt">De profielpagina positioneert PlasmaMade in Orlando tussen oplossingen voor indoor air quality, ventilation en kitchen products. Daarmee is het merk ook op de Noord-Amerikaanse beurskalender zichtbaar in een context van nieuwbouw en projectontwikkeling.</p>
+              <h2 class="news-card__title">PlasmaMade opgenomen in IBS 2026 exposantenprofiel</h2>
+              <p class="news-card__lead">De online exposantenpagina plaatste PlasmaMade by JAK Appliance Group in het New Product Zone-overzicht.</p>
               <div class="news-card__footer">
-                <a class="news-card__cta" href="https://www.buildersshow.com/Search/Exhibitor.aspx?id=206228&amp;year=2026" target="_blank" rel="noopener noreferrer">Lees publicatie</a>
-                 <p class="news-card__source">Bron: <a href="https://www.buildersshow.com/Search/Exhibitor.aspx?id=206228&amp;year=2026" target="_blank" rel="noopener noreferrer">IBS 2026</a> <span class="news-card__source-domain">IBS 2026</span></p>
+                <a class="news-card__cta" href="https://www.buildersshow.com/Search/Exhibitor.aspx?id=206228&amp;year=2026" target="_blank" rel="noopener noreferrer">Lees meer</a>
               </div>
             </div>
           </div>
@@ -2509,11 +2979,9 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <time datetime="2026-01-29">29 januari 2026</time>
               </div>
               <h2 class="news-card__title">VSK-artikel koppelt PlasmaMade-techniek aan fijnstof in WTW-installaties</h2>
-              <p class="news-card__lead">Bouw en Installatie Hub publiceerde eind januari over een PlasmaMade-oplossing voor warmteterugwinsystemen en fijnstofreductie.</p>
-              <p class="news-card__excerpt">De publicatie zoomt in op een warmtewisselaar die tegelijk als filter werkt. Daarmee wordt PlasmaMade niet alleen in keukenventilatie, maar ook in bredere ventilatie- en installatietoepassingen zichtbaar als partij rond schone binnenlucht.</p>
+              <p class="news-card__lead">Bouw en Installatie Hub schreef over een PlasmaMade-oplossing voor warmteterugwinsystemen en fijnstofreductie.</p>
               <div class="news-card__footer">
-                <a class="news-card__cta" href="https://www.vsk.nl/artikelen/nieuwe-filter-maakt-van-elke-wtw-installatie-een-fijnstofvreter" target="_blank" rel="noopener noreferrer">Lees publicatie</a>
-                <p class="news-card__source">Bron: <a href="https://www.vsk.nl/artikelen/nieuwe-filter-maakt-van-elke-wtw-installatie-een-fijnstofvreter" target="_blank" rel="noopener noreferrer">VSK / Bouw en Installatie Hub</a> <span class="news-card__source-domain">vsk.nl</span></p>
+                <a class="news-card__cta" href="https://www.vsk.nl/artikelen/nieuwe-filter-maakt-van-elke-wtw-installatie-een-fijnstofvreter" target="_blank" rel="noopener noreferrer">Lees meer</a>
               </div>
             </div>
           </div>
@@ -2535,11 +3003,9 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <time datetime="2025-11">november 2025</time>
               </div>
               <h2 class="news-card__title">U.S. distributie uitgebreid via exclusieve Almo-overeenkomst</h2>
-              <p class="news-card__lead">Retail Observer publiceerde in november over de exclusieve distributieafspraak tussen Almo Premium Appliances en PlasmaMade USA / JAK Appliance Group.</p>
-              <p class="news-card__excerpt">De dekking richt zich op beschikbaarheid in geselecteerde Amerikaanse regio's en op het gebruik van PlasmaMade in dealer-, project- en designkanalen waar ductloze ventilatie eenvoudiger inpasbaar is. Daarmee markeert het item een duidelijke stap in de U.S. marktuitrol.</p>
+              <p class="news-card__lead">Retail Observer berichtte over de exclusieve distributieafspraak tussen Almo Premium Appliances en PlasmaMade USA / JAK Appliance Group.</p>
               <div class="news-card__footer">
-                <a class="news-card__cta" href="https://www.e-digitaleditions.com/i/1540965/14" target="_blank" rel="noopener noreferrer">Lees publicatie</a>
-                <p class="news-card__source">Bron: <a href="https://www.e-digitaleditions.com/i/1540965/14" target="_blank" rel="noopener noreferrer">Retail Observer</a> <span class="news-card__source-domain">e-digitaleditions.com</span></p>
+                <a class="news-card__cta" href="https://www.e-digitaleditions.com/i/1540965/14" target="_blank" rel="noopener noreferrer">Lees meer</a>
               </div>
             </div>
           </div>
@@ -2560,12 +3026,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <span class="news-card__badge">Award</span>
                 <time datetime="2025-10-29">29 oktober 2025</time>
               </div>
-              <h2 class="news-card__title">PlasmaMade E-Filter opgenomen in de PLUS X AWARD 2025 selectie</h2>
-              <p class="news-card__lead">De internationale awardpublicatie plaatste PlasmaMade eind oktober in de 2025-lichting voor huishoudelijke apparaten.</p>
-              <p class="news-card__excerpt">In de jurytekst ligt de nadruk op innovatie, kwaliteit, functionaliteit, ergonomie en ecologie. Het resultaat is geen lange merkstory, maar een compacte erkenning van het product als onderscheidende oplossing binnen zijn categorie.</p>
+              <h2 class="news-card__title">PlasmaMade E-Filter in PLUS X AWARD 2025 selectie</h2>
+              <p class="news-card__lead">De internationale awardpublicatie plaatste PlasmaMade eind oktober in de 2025-selectie voor huishoudelijke apparaten.</p>
               <div class="news-card__footer">
-                <a class="news-card__cta" href="https://plusxaward.de/en/portfolio/plasmamade-e-filter/" target="_blank" rel="noopener noreferrer">Lees publicatie</a>
-                <p class="news-card__source">Bron: <a href="https://plusxaward.de/en/portfolio/plasmamade-e-filter/" target="_blank" rel="noopener noreferrer">Plus X Award</a> <span class="news-card__source-domain">plusxaward.de</span></p>
+                <a class="news-card__cta" href="https://plusxaward.de/en/portfolio/plasmamade-e-filter/" target="_blank" rel="noopener noreferrer">Lees meer</a>
               </div>
             </div>
           </div>
@@ -2586,12 +3050,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <span class="news-card__badge">Vakmedia</span>
                 <time datetime="2025-08-13">13 augustus 2025</time>
               </div>
-              <h2 class="news-card__title">Duitse keukenvakmedia volgt de nieuwe BASIC, STANDARD en PREMIUM structuur</h2>
-              <p class="news-card__lead">Kueche + Architektur beschreef in augustus hoe PlasmaMade het E-Filter-assortiment opnieuw ordent voor keukenstudio's.</p>
-              <p class="news-card__excerpt">De publicatie benadrukt vooral de vertaalslag naar advies en verkoop: een heldere segmentatie per gebruikssituatie, zonder het onderhoudsarme en duurzame karakter van het systeem los te laten. Daarmee wordt het assortiment inhoudelijk scherper gepositioneerd in de studio-omgeving.</p>
+              <h2 class="news-card__title">Duitse vakmedia belicht nieuwe BASIC, STANDARD en PREMIUM structuur</h2>
+              <p class="news-card__lead">Kueche + Architektur liet zien hoe PlasmaMade het E-Filter-assortiment opnieuw ordent voor keukenstudio's.</p>
               <div class="news-card__footer">
-                <a class="news-card__cta" href="https://kuecheundarchitektur.de/top-themen/innovation-fuer-kuechenstudios-das-neu-strukturierte-plasmamade-e-filter-sortiment-massgeschneiderte-loesungen-fuer-jede-kueche/" target="_blank" rel="noopener noreferrer">Lees publicatie</a>
-                <p class="news-card__source">Bron: <a href="https://kuecheundarchitektur.de/top-themen/innovation-fuer-kuechenstudios-das-neu-strukturierte-plasmamade-e-filter-sortiment-massgeschneiderte-loesungen-fuer-jede-kueche/" target="_blank" rel="noopener noreferrer">Kueche + Architektur</a> <span class="news-card__source-domain">kuecheundarchitektur.de</span></p>
+                <a class="news-card__cta" href="https://kuecheundarchitektur.de/top-themen/innovation-fuer-kuechenstudios-das-neu-strukturierte-plasmamade-e-filter-sortiment-massgeschneiderte-loesungen-fuer-jede-kueche/" target="_blank" rel="noopener noreferrer">Lees meer</a>
               </div>
             </div>
           </div>
@@ -2614,10 +3076,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
               </div>
               <h2 class="news-card__title">Noorse vakpublicatie belicht nieuwe generatie PlasmaMade-filters</h2>
               <p class="news-card__lead">Produktfakta publiceerde in augustus een marktintroductie voor nieuwe PlasmaMade-modellen in Noorwegen.</p>
-              <p class="news-card__excerpt">De publicatie legt de nadruk op eenvoudige montage, lange levensduur, recirculatie als energie-efficiente keuze en inzet in zowel nieuwbouw als renovatieprojecten. Ook de rol van MT Nordic als distributeur krijgt daarin een duidelijke plaats.</p>
               <div class="news-card__footer">
-                <a class="news-card__cta" href="https://www.produktfakta.no/enklere-og-renere-kjoekkenventilasjon-med-nytt-plasmamade-filter-405299/nyhet.html" target="_blank" rel="noopener noreferrer">Lees publicatie</a>
-                <p class="news-card__source">Bron: <a href="https://www.produktfakta.no/enklere-og-renere-kjoekkenventilasjon-med-nytt-plasmamade-filter-405299/nyhet.html" target="_blank" rel="noopener noreferrer">Produktfakta</a> <span class="news-card__source-domain">produktfakta.no</span></p>
+                <a class="news-card__cta" href="https://www.produktfakta.no/enklere-og-renere-kjoekkenventilasjon-med-nytt-plasmamade-filter-405299/nyhet.html" target="_blank" rel="noopener noreferrer">Lees meer</a>
               </div>
             </div>
           </div>
@@ -2638,12 +3098,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <span class="news-card__badge">Webinar</span>
                 <time datetime="2025-04-02">2 april 2025</time>
               </div>
-              <h2 class="news-card__title">NKBA zet PlasmaMade-webinar over ductloze keukenventilatie op de agenda</h2>
-              <p class="news-card__lead">In april publiceerde NKBA een CEU-webinar rond recirculerende keukenontwerpen zonder externe afvoer.</p>
-              <p class="news-card__excerpt">De sessie positioneert het E-Filter als alternatief voor traditionele ducting en richt zich op ontwerpers en bouwprofessionals die binnen gezondere, flexibelere plattegronden werken. De publicatie onderstreept vooral het educatieve en professionele karakter van die positionering.</p>
+              <h2 class="news-card__title">NKBA zet webinar over ductloze keukenventilatie op agenda</h2>
+              <p class="news-card__lead">NKBA publiceerde een CEU-webinar rond recirculerende keukenontwerpen zonder externe afvoer.</p>
               <div class="news-card__footer">
-                <a class="news-card__cta" href="https://nkba.org/learning/webinars/eliminate-external-kitchen-vents-with-plasmamade-e-filter-technology/" target="_blank" rel="noopener noreferrer">Lees publicatie</a>
-                <p class="news-card__source">Bron: <a href="https://nkba.org/learning/webinars/eliminate-external-kitchen-vents-with-plasmamade-e-filter-technology/" target="_blank" rel="noopener noreferrer">NKBA</a> <span class="news-card__source-domain">nkba.org</span></p>
+                <a class="news-card__cta" href="https://nkba.org/learning/webinars/eliminate-external-kitchen-vents-with-plasmamade-e-filter-technology/" target="_blank" rel="noopener noreferrer">Lees meer</a>
               </div>
             </div>
           </div>
@@ -2665,11 +3123,9 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <time datetime="2025-03-26">26 maart 2025</time>
               </div>
               <h2 class="news-card__title">Veiligheid en certificering centraal in interview over de E-Filter</h2>
-              <p class="news-card__lead">Keukenbouw sprak in maart met Kenny van der Sluis over de veiligheidsarchitectuur achter PlasmaMade.</p>
-              <p class="news-card__excerpt">Het artikel zoomt in op ozonbeheersing, fail-safe elektronica, dubbele kwaliteitscontrole via Variass en het belang van Kiwa, UL en CSA voor internationale markttoegang. Daarmee krijgt vooral de technische en certificeringskant van het merk zichtbaar meer profiel.</p>
+              <p class="news-card__lead">Keukenbouw sprak met Kenny van der Sluis over de veiligheidsarchitectuur achter PlasmaMade.</p>
               <div class="news-card__footer">
-                <a class="news-card__cta" href="https://keukenbouw-online.nl/keukenapparatuur/afzuigkap/veiligheid-voorop-bij-e-filters-uit-staphorst/" target="_blank" rel="noopener noreferrer">Lees publicatie</a>
-                <p class="news-card__source">Bron: <a href="https://keukenbouw-online.nl/keukenapparatuur/afzuigkap/veiligheid-voorop-bij-e-filters-uit-staphorst/" target="_blank" rel="noopener noreferrer">Keukenbouw Online</a> <span class="news-card__source-domain">keukenbouw-online.nl</span></p>
+                <a class="news-card__cta" href="https://keukenbouw-online.nl/keukenapparatuur/afzuigkap/veiligheid-voorop-bij-e-filters-uit-staphorst/" target="_blank" rel="noopener noreferrer">Lees meer</a>
               </div>
             </div>
           </div>
@@ -2687,14 +3143,54 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     const count = document.getElementById("newsSearchCount");
     const empty = document.getElementById("newsEmpty");
     const articles = Array.from(document.querySelectorAll(".news-card"));
-    const filterButtons = Array.from(document.querySelectorAll(".news-filter-chip"));
-    let activeFilter = "all";
 
     if (!input || !count || !empty || !articles.length) {
       return;
     }
 
+    function updateResultsSimple() {
+      const query = input.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      articles.forEach(function (article) {
+        const matchesQuery = article.innerText.toLowerCase().includes(query);
+        article.style.display = matchesQuery ? "" : "none";
+        if (matchesQuery) {
+          visibleCount += 1;
+        }
+      });
+
+      if (query) {
+        count.textContent = visibleCount === 1
+          ? "1 nieuwsitem gevonden"
+          : visibleCount + " nieuwsitems gevonden";
+      } else {
+        count.textContent = articles.length === 1
+          ? "1 nieuwsitem"
+          : articles.length + " nieuwsitems";
+      }
+
+      empty.style.display = visibleCount === 0 ? "block" : "none";
+    }
+
+    input.addEventListener("input", updateResultsSimple);
+    input.addEventListener("search", updateResultsSimple);
+    input.addEventListener("change", updateResultsSimple);
+    updateResultsSimple();
+    return;
+
+    document.querySelectorAll(".news-rail__meta").forEach(function (item) {
+      item.textContent = item.textContent.replace(/\s*[•â€¢]+\s*/g, " | ");
+    });
+
     function getFilterLabel() {
+      document.querySelectorAll(".news-rail__meta").forEach(function (item) {
+        item.textContent = item.textContent
+          .replace(/\u2022/g, "|")
+          .replace(/â€¢/g, "|")
+          .replace(/\s*\|\s*/g, " | ");
+      });
+
       const activeButton = filterButtons.find(function (button) {
         return button.dataset.filter === activeFilter;
       });
